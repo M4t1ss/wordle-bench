@@ -59,6 +59,16 @@ class UnknownFiveLetterWordError(RuleViolationError):
     pass
 
 
+class WordLengthError(RuleViolationError):
+    """Raised when the word is 5-letters but not part of the game's vocabulary"""
+    pass
+
+
+class WordFormatError(RuleViolationError):
+    """Raised when the word is 5-letters but not part of the game's vocabulary"""
+    pass
+
+
 class ProtocolError(ResponseError):
     """Raised when a message does not follow the communication protocol expected by the game master."""
     pass
@@ -194,16 +204,26 @@ class ReflectingWordGuesser(WordGuesser):
 
 def parse_response(player: Player, response: str, words: Dict) -> Tuple[str, str]:
     """Parse guesser response and extract guess and explanation"""
+
+    response = response.replace("<|im_end|>", "")
+
     if not response or not response.startswith(words["explanation_lang"]):
-        raise ParseError(f"The response should always start with the keyword '{words['explanation_lang']}'",
+
+        # Let's try to see if there is really no way to do this right...
+
+        if words["explanation_lang"] in response:
+            resp_parts = response.split(words["explanation_lang"])
+            response = words["explanation_lang"] + resp_parts[1]
+        else:
+            raise ParseError(f"The response should always start with the keyword '{words['explanation_lang']}'",
                          key="INVALID_START_WORD")
 
     response = response.strip()
-    lines = response.split("\n")
-    if len(lines) > 2:
-        raise ParseError(f"The response should contain only the '{words['guess_lang']}' and "
-                         f"'{words['explanation_lang']}' keywords and associated information.",
-                         key="UNKNOWN_TAGS")
+    # lines = response.split("\n")
+    # if len(lines) > 2:
+    #     raise ParseError(f"The response should contain only the '{words['guess_lang']}' and "
+    #                      f"'{words['explanation_lang']}' keywords and associated information.",
+    #                      key="UNKNOWN_TAGS")
 
     # Extract explanation and guess
     explanation_pattern = re.compile(rf"{words['explanation_lang']}([^\n]*)", re.IGNORECASE)
@@ -229,11 +249,11 @@ def parse_response(player: Player, response: str, words: Dict) -> Tuple[str, str
 def validate_guess(guess: str, words: Dict):
     """Validate guess format and content"""
     if not guess.isalpha() or " " in guess:
-        raise RuleViolationError("The guess should be a single word and should only contain letters.",
+        raise WordFormatError("The guess should be a single word and should only contain letters.",
                                  key="INVALID_FORMAT")
 
     if len(guess) != words["max_word_length"]:
-        raise RuleViolationError(f"The length of the guessed word is not {words['max_word_length']}.",
+        raise WordLengthError(f"The length of the guessed word is not {words['max_word_length']}.",
                                  key="INVALID_WORD_LENGTH")
 
     if guess not in words["official_words_list"]:
@@ -289,8 +309,8 @@ GUESSER_FEEDBACKS = "Guesser Feedbacks"
 class Wordle(DialogueGameMaster):
     """Basic Wordle game without clue or critic"""
 
-    def __init__(self, game_spec: GameSpec, experiment: Dict, player_models: List[Model]):
-        super().__init__(game_spec, experiment, player_models)
+    def __init__(self, game_name: str, game_path: str, experiment: Dict, player_models: List[Model]):
+        super().__init__(game_name, game_path, experiment, player_models)
         # game specific logging
         self.request_counts: int = 0
         self.parsed_request_counts: int = 0
@@ -305,7 +325,7 @@ class Wordle(DialogueGameMaster):
             words=self.experiment["lang_keywords"],
             max_rounds=self.experiment["common_config"]["n_turns"],
             # NOT_VALID_WORD_FOR_GAME is the only entry in the dict; we only handle this case in the game for now
-            max_retry_per_error=self.experiment["common_config"]["max_retry_per_error"]["NOT_VALID_WORD_FOR_GAME"],
+            max_retry_per_error=self.experiment["common_config"]["max_retry_per_error"],
             guesser_initial_prompt=self.experiment["guesser_prompt"]
         )
         self.guess_validator = GuessValidator(self.state.target_word)
@@ -335,7 +355,7 @@ class Wordle(DialogueGameMaster):
             self.state.error = None
             return True
         except (ParseError, RuleViolationError) as e:
-            if isinstance(e, UnknownFiveLetterWordError):
+            if isinstance(e, UnknownFiveLetterWordError) or isinstance(e, WordLengthError) or isinstance(e, WordFormatError):
                 self.parsed_request_counts += 1  # in this case still count toward parsed requests, but re-prompt
             else:
                 self.violated_request_counts += 1
@@ -349,11 +369,30 @@ class Wordle(DialogueGameMaster):
             if isinstance(self.state.error, UnknownFiveLetterWordError):
                 # perform re-prompting up to N times
                 self.state.reprompt_attempts += 1
-                if self.state.reprompt_attempts > self.state.max_retry_per_error:
+                if self.state.reprompt_attempts > self.state.max_retry_per_error["NOT_VALID_WORD_FOR_GAME"]:
                     self.log_to_self("invalid format", "game_result = ABORT")
                     self.state.aborted = True
                 else:  # adjust re-prompt text
                     self.set_context_for(self.guesser, self.formatter.to_gm_reprompt_for_guesser(self.state.error))
+
+            elif isinstance(self.state.error, WordLengthError):
+                # perform re-prompting up to N times
+                self.state.reprompt_attempts += 1
+                if self.state.reprompt_attempts > self.state.max_retry_per_error["INVALID_WORD_LENGTH"]:
+                    self.log_to_self("invalid format", "game_result = ABORT")
+                    self.state.aborted = True
+                else:  # adjust re-prompt text
+                    self.set_context_for(self.guesser, self.formatter.to_gm_reprompt_for_guesser(self.state.error))
+
+            elif isinstance(self.state.error, WordFormatError):
+                # perform re-prompting up to N times
+                self.state.reprompt_attempts += 1
+                if self.state.reprompt_attempts > self.state.max_retry_per_error["INVALID_FORMAT"]:
+                    self.log_to_self("invalid format", "game_result = ABORT")
+                    self.state.aborted = True
+                else:  # adjust re-prompt text
+                    self.set_context_for(self.guesser, self.formatter.to_gm_reprompt_for_guesser(self.state.error))
+
             else:
                 self.log_to_self("invalid format", "game_result = ABORT")
                 self.state.aborted = True
@@ -451,8 +490,8 @@ class WordleWithCritic(WordleWithClue):
     Only then the color feedback is given and it's the guessers turn again.
     """
 
-    def __init__(self, game_spec: GameSpec, experiment: Dict, player_models: List[Model]):
-        super().__init__(game_spec, experiment, player_models)
+    def __init__(self, game_name: str, game_path: str, experiment: Dict, player_models: List[Model]):
+        super().__init__(game_name, game_path, experiment, player_models)
         self.critics_judgements: List[str] = []
 
     def _on_setup(self, **game_instance):
@@ -698,11 +737,11 @@ class WordleGameBenchmark(GameBenchmark):
 
     def create_game_master(self, experiment: Dict, player_models: List[Model]) -> GameMaster:
         if self.game_name == "wordle_withcritic":
-            return WordleWithCritic(self.game_spec, experiment, player_models)
+            return WordleWithCritic(self.game_name, self.game_path, experiment, player_models)
         elif self.game_name == "wordle_withclue":
-            return WordleWithClue(self.game_spec, experiment, player_models)
+            return WordleWithClue(self.game_name, self.game_path, experiment, player_models)
         else:
-            return Wordle(self.game_spec, experiment, player_models)
+            return Wordle(self.game_name, self.game_path, experiment, player_models)
 
     def create_game_scorer(self, experiment: Dict, game_instance: Dict) -> GameScorer:
         if self.game_name == "wordle_withcritic":
