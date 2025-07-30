@@ -6,7 +6,9 @@ import numpy as np
 import re
 
 from clemcore.backends import Model
-from clemcore.clemgame import GameSpec, GameMaster, GameBenchmark, Player, DialogueGameMaster, GameScorer
+from clemcore.clemgame import GameSpec, GameMaster, GameBenchmark, Player, ResponseError, ParseError, RuleViolationError
+from clemcore.clemgame.legacy.scorer import GameScorer
+from clemcore.clemgame.legacy.master import DialogueGameMaster
 from clemcore.clemgame.metrics import METRIC_ABORTED, METRIC_SUCCESS, METRIC_LOSE, METRIC_REQUEST_COUNT, \
     METRIC_REQUEST_COUNT_VIOLATED, METRIC_REQUEST_COUNT_PARSED, BENCH_SCORE
 
@@ -16,48 +18,9 @@ from utils.compute_metrics import turns_closeness, turns_strategy
 logger = logging.getLogger(__name__)
 
 
-class ResponseError(Exception):
-    """
-    General error class for problems with the player response.
-
-    Developers can introduce more specific error types by subclassing this error.
-    Alternatively, the 'reason' attribute can be used to define more granular error types.
-    """
-
-    def __init__(self, reason: Optional[str] = None, response: Optional[str] = None, key: Optional[str] = None):
-        """
-        :param reason: (optional) a brief description of the cause
-        :param response: (optional) the player's response
-        :param key: (optional) a key word
-        """
-        super().__init__(reason)
-        self.reason = reason
-        self.response = response
-        self.key = key
-
-    def __str__(self):
-        return f"{self.__class__.__name__}: {self.reason}"
-
-
-class GameError(ResponseError):
-    """Raised when a verbal action of a player causes problems for advancing the game."""
-    pass
-
-
-class RuleViolationError(GameError):
-    """Raised when a verbal action of a player violates the specified game rules.
-
-    For example:
-        - taboo: mentioning the target word as the clue giver
-        - wordle: guessing words that are not exactly 5 letters long
-    """
-    pass
-
-
 class UnknownFiveLetterWordError(RuleViolationError):
     """Raised when the word is 5-letters but not part of the game's vocabulary"""
     pass
-
 
 class WordLengthError(RuleViolationError):
     """Raised when the word is 5-letters but not part of the game's vocabulary"""
@@ -84,7 +47,6 @@ class ParseError(ProtocolError):
         - wordle: guesser messages should start with 'GUESS:'
     """
     pass
-
 
 class ResponseFormatter:
 
