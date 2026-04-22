@@ -1,11 +1,11 @@
 import re
 import logging
-from typing import List
+from typing import Dict, List
 
 logger = logging.getLogger(__name__)
 
 
-def turns_closeness(guesser_feedbacks: List[str]):
+def turns_closeness(guesser_feedbacks: List[str], words: Dict):
     """
     Assuming records contain turns_data in the below format
     [['creek', 'c<red> r<red> e<red> e<red> k<green>'], ['sneak', 's<green> n<yellow> e<red> a<red> k<green>']
@@ -19,16 +19,16 @@ def turns_closeness(guesser_feedbacks: List[str]):
         # Add a score of 0 for letters in red
         score = 0
         for letter in feedback.split(" "):
-            if "žalia" in letter:
+            if words["response_green"] in letter:
                 score += 5
-            elif "geltona" in letter:
+            elif words["response_yellow"] in letter:
                 score += 3
         score_list.append(score)
 
     return score_list
 
 
-def turns_strategy(guesser_feedbacks: List[str], is_aborted: bool):
+def turns_strategy(guesser_feedbacks: List[str], is_aborted: bool, words: Dict):
     """
     Assuming records contain turns_data in the below format
     [['creek', 'c<red> r<red> e<red> e<red> k<green>'], ['sneak', 's<green> n<yellow> e<red> a<red> k<green>']
@@ -47,12 +47,12 @@ def turns_strategy(guesser_feedbacks: List[str], is_aborted: bool):
         guess1_use = []
         guess1_change = []
 
-        if "raudona" in guess1_dict:
-            guess1_not_use = guess1_dict["raudona"]
-        if "žalia" in guess1_dict:
-            guess1_use = guess1_dict["žalia"]
-        if "geltona" in guess1_dict:
-            guess1_change = guess1_dict["geltona"]
+        if words["response_red"] in guess1_dict:
+            guess1_not_use = guess1_dict[words["response_red"]]
+        if words["response_green"] in guess1_dict:
+            guess1_use = guess1_dict[words["response_green"]]
+        if words["response_yellow"] in guess1_dict:
+            guess1_change = guess1_dict[words["response_yellow"]]
         score = 0
 
         result = len(set(guess1_not_use) & set(guess2_list))
