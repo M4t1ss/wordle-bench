@@ -290,39 +290,39 @@
             },
             "use_clue": false,
             "use_critic": false,
-            "guesser_prompt": "Tu esi valodas burvis, kuram patīk minēt vārdus, izmantojot dotos noteikumus.\n\nLaipni lūdzam Vārdulī! Tev ir seši mēģinājumi uzminēt mērķa vārdu, kas ir derīgs latviešu valodas vārds, kas sastāv no pieciem mazajiem burtiem (a–ž). Lūdzu, izmanto iezīmes \"skaidrojums:\" un \"minējums:\", lai sniegtu kodolīgu katra minējuma skaidrojumu.\n\nPiemēram, ja Tavs minējums ir \"saule\", Tavai atbildei jābūt\nskaidrojums: šis ir izplatīts piecu burtu latviešu valodas vārds, un es sāku savu minējumu ar šo vārdu.\nminējums: saule\n\nPēc katra minējuma Tava atbilde tiks pārbaudīta, un Tu saņemsi atsauksmi, kas norāda, kuri burti ir pareizi (zaļš), kuri burti ir pareizi, bet nepareizā pozīcijā (dzeltens) un kuri burti ir nepareizi (sarkans). Šī atsauksme var būt noderīga, lai noteiktu, kurus burtus iekļaut vai izslēgt no nākamā minējuma.\n\nPiemēram, atsauksme par \"saule\" varētu būt šāda:\nminējuma_atsauksme: s<dzeltens> a<dzeltens> u<zaļš> l<dzeltens> e<sarkans>\n\nPaskaidrojumā jāiekļauj informācija par to, kā minējuma_atsauksme tiek izmantota, lai nonāktu pie jauna minējuma.\n\nNeģenerē nekādu citu tekstu.\n\nSāksim ar Tavu pirmo minējumu.",
+            "guesser_prompt": "Oled keelevõlur, kellele meeldib sõnu antud reeglite järgi ära arvata.\n\nTere tulemast Wordle'i! Teil on kuus katset arvata ära sihtsõna, mis on kehtiv viietäheline eestikeelne väiketähtedega (a-ž) sõna. Palun kasutage silte \"selgitus:\" ja \"arvamine:\", et anda iga arvamise kohta lühike selgitus.\n\nNäiteks kui teie arvamine on \"pinks\", peaks teie vastus olema\nselgitus: see on tavaline viietäheline eestikeelne sõna ja ma alustan oma arvamist selle sõnaga.\narvamine: pinks\n\nPärast iga arvamist teie vastus kinnitatakse ja te saate tagasisidet, mis näitab, millised tähed on õiged (roheline), millised tähed on õiged, kuid vales kohas (kollane) ja millised tähed on valed (punane). See tagasiside võib olla kasulik järgmises arvamises sisalduvate või välistatavate tähtede määramisel.\n\nNäiteks tagasiside sõnale \"pinks\" võib olla:\narvamise_tagasiside: p<kollane> i<kollane> n<roheline> k<kollane> s<punane>\n\nSelgitus peaks sisaldama üksikasju selle kohta, kuidas arvamise_tagasiside kasutatakse uue arvamiseni jõudmiseks.\n\nÄrge genereerige muud teksti.\n\nAlustame teie esimese arvamisega.",
             "guesser_critic_prompt": "",
             "lang_keywords":
             {
                 "max_word_length": 5,
-                "clue_lang": "mājiens:",
-                "guess_lang": "minējums:",
-                "guess_word_lang": "vārds",
-                "explanation_lang": "skaidrojums:",
-                "explanataion_details_lang": "detaļas",
-                "guess_feedback_lang": "minējuma_atsauksme:",
-                "agreement_lang": "saskaņa:",
-                "agreement_word_lang": "jā vai nē",
-                "guess_agreement_lang": "minējumu_saskaņa:",
-                "agreement_explanation_lang": "saskaņas_skaidrojums:",
+                "clue_lang": "vihje:",
+                "guess_lang": "arvamine:",
+                "guess_word_lang": "sõna",
+                "explanation_lang": "selgitus:",
+                "explanataion_details_lang": "üksikasjad",
+                "guess_feedback_lang": "arvamise_tagasiside:",
+                "agreement_lang": "nõustumine:",
+                "agreement_word_lang": "jah või ei",
+                "guess_agreement_lang": "arvamise_nõustumine:",
+                "agreement_explanation_lang": "nõustumise_selgitus:",
                 "agreement_match_keywords_lang":
                 [
-                    "jā",
-                    "nē"
+                    "jah",
+                    "ei"
                 ],
                 "official_recognized_words_file_url": "https://raw.githubusercontent.com/M4t1ss/vardulis/refs/heads/master/src/constants/validGuesses.ts",
                 "word_clues_file_url": "",
                 "error_prompt_text":
                 {
-                    "INVALID_WORD_LENGTH": "Minējumam jābūt tieši 5 burtu garumā.",
-                    "INVALID_WORD": "Minējumam jāsatur tikai burti.",
-                    "NOT_VALID_WORD_FOR_GAME": "Minējums nav derīgs vārds šajā spēlē.",
-                    "INVALID_FORMAT": "Atbildi tikai šādā formātā.",
-                    "OTHER_ERROR": "Uzmini vārdu piecu burtu garumā latviešu valodā.",
-                    "OTHER_DETAILS": "Neģenerē nekādu citu tekstu. Lūdzu mēģini vēlreiz.",
-                    "ERROR_RESPONSE_FORMAT": "Minējums neatbilst formatējuma likumiem",
-                    "ERROR_GAME_FORMAT": "Minējums neatbilst spēles likumiem.",
-                    "RETRY": "Lūdzu mēģini vēlreiz."
+                    "INVALID_WORD_LENGTH": "Arvamises peab olema täpselt 5 tähte.",
+                    "INVALID_WORD": "Arvamine peab sisaldama ainult tähti.",
+                    "NOT_VALID_WORD_FOR_GAME": "Teie arvamine ei ole selles mängus kehtiv sõna.",
+                    "INVALID_FORMAT": "Esitage oma vastus ainult selles vormingus.",
+                    "OTHER_ERROR": "Arvake ära eestikeelne viietäheline sõna.",
+                    "OTHER_DETAILS": "Ärge genereerige muud teksti. Palun proovige uuesti.",
+                    "ERROR_RESPONSE_FORMAT": "Arvamine ei vasta vormingureeglitele.",
+                    "ERROR_GAME_FORMAT": "Arvamine ei vasta mängureeglitele.",
+                    "RETRY": "Palun proovige uuesti."
                 },
                 "official_words_list":
                 [
@@ -23027,39 +23027,39 @@
             },
             "use_clue": false,
             "use_critic": false,
-            "guesser_prompt": "Tu esi valodas burvis, kuram patīk minēt vārdus, izmantojot dotos noteikumus.\n\nLaipni lūdzam Vārdulī! Tev ir seši mēģinājumi uzminēt mērķa vārdu, kas ir derīgs latviešu valodas vārds, kas sastāv no pieciem mazajiem burtiem (a–ž). Lūdzu, izmanto iezīmes \"skaidrojums:\" un \"minējums:\", lai sniegtu kodolīgu katra minējuma skaidrojumu.\n\nPiemēram, ja Tavs minējums ir \"saule\", Tavai atbildei jābūt\nskaidrojums: šis ir izplatīts piecu burtu latviešu valodas vārds, un es sāku savu minējumu ar šo vārdu.\nminējums: saule\n\nPēc katra minējuma Tava atbilde tiks pārbaudīta, un Tu saņemsi atsauksmi, kas norāda, kuri burti ir pareizi (zaļš), kuri burti ir pareizi, bet nepareizā pozīcijā (dzeltens) un kuri burti ir nepareizi (sarkans). Šī atsauksme var būt noderīga, lai noteiktu, kurus burtus iekļaut vai izslēgt no nākamā minējuma.\n\nPiemēram, atsauksme par \"saule\" varētu būt šāda:\nminējuma_atsauksme: s<dzeltens> a<dzeltens> u<zaļš> l<dzeltens> e<sarkans>\n\nPaskaidrojumā jāiekļauj informācija par to, kā minējuma_atsauksme tiek izmantota, lai nonāktu pie jauna minējuma.\n\nNeģenerē nekādu citu tekstu.\n\nSāksim ar Tavu pirmo minējumu.",
+            "guesser_prompt": "Oled keelevõlur, kellele meeldib sõnu antud reeglite järgi ära arvata.\n\nTere tulemast Wordle'i! Teil on kuus katset arvata ära sihtsõna, mis on kehtiv viietäheline eestikeelne väiketähtedega (a-ž) sõna. Palun kasutage silte \"selgitus:\" ja \"arvamine:\", et anda iga arvamise kohta lühike selgitus.\n\nNäiteks kui teie arvamine on \"pinks\", peaks teie vastus olema\nselgitus: see on tavaline viietäheline eestikeelne sõna ja ma alustan oma arvamist selle sõnaga.\narvamine: pinks\n\nPärast iga arvamist teie vastus kinnitatakse ja te saate tagasisidet, mis näitab, millised tähed on õiged (roheline), millised tähed on õiged, kuid vales kohas (kollane) ja millised tähed on valed (punane). See tagasiside võib olla kasulik järgmises arvamises sisalduvate või välistatavate tähtede määramisel.\n\nNäiteks tagasiside sõnale \"pinks\" võib olla:\narvamise_tagasiside: p<kollane> i<kollane> n<roheline> k<kollane> s<punane>\n\nSelgitus peaks sisaldama üksikasju selle kohta, kuidas arvamise_tagasiside kasutatakse uue arvamiseni jõudmiseks.\n\nÄrge genereerige muud teksti.\n\nAlustame teie esimese arvamisega.",
             "guesser_critic_prompt": "",
             "lang_keywords":
             {
                 "max_word_length": 5,
-                "clue_lang": "mājiens:",
-                "guess_lang": "minējums:",
-                "guess_word_lang": "vārds",
-                "explanation_lang": "skaidrojums:",
-                "explanataion_details_lang": "detaļas",
-                "guess_feedback_lang": "minējuma_atsauksme:",
-                "agreement_lang": "saskaņa:",
-                "agreement_word_lang": "jā vai nē",
-                "guess_agreement_lang": "minējumu_saskaņa:",
-                "agreement_explanation_lang": "saskaņas_skaidrojums:",
+                "clue_lang": "vihje:",
+                "guess_lang": "arvamine:",
+                "guess_word_lang": "sõna",
+                "explanation_lang": "selgitus:",
+                "explanataion_details_lang": "üksikasjad",
+                "guess_feedback_lang": "arvamise_tagasiside:",
+                "agreement_lang": "nõustumine:",
+                "agreement_word_lang": "jah või ei",
+                "guess_agreement_lang": "arvamise_nõustumine:",
+                "agreement_explanation_lang": "nõustumise_selgitus:",
                 "agreement_match_keywords_lang":
                 [
-                    "jā",
-                    "nē"
+                    "jah",
+                    "ei"
                 ],
                 "official_recognized_words_file_url": "https://raw.githubusercontent.com/M4t1ss/vardulis/refs/heads/master/src/constants/validGuesses.ts",
                 "word_clues_file_url": "",
                 "error_prompt_text":
                 {
-                    "INVALID_WORD_LENGTH": "Minējumam jābūt tieši 5 burtu garumā.",
-                    "INVALID_WORD": "Minējumam jāsatur tikai burti.",
-                    "NOT_VALID_WORD_FOR_GAME": "Minējums nav derīgs vārds šajā spēlē.",
-                    "INVALID_FORMAT": "Atbildi tikai šādā formātā.",
-                    "OTHER_ERROR": "Uzmini vārdu piecu burtu garumā latviešu valodā.",
-                    "OTHER_DETAILS": "Neģenerē nekādu citu tekstu. Lūdzu mēģini vēlreiz.",
-                    "ERROR_RESPONSE_FORMAT": "Minējums neatbilst formatējuma likumiem",
-                    "ERROR_GAME_FORMAT": "Minējums neatbilst spēles likumiem.",
-                    "RETRY": "Lūdzu mēģini vēlreiz."
+                    "INVALID_WORD_LENGTH": "Arvamises peab olema täpselt 5 tähte.",
+                    "INVALID_WORD": "Arvamine peab sisaldama ainult tähti.",
+                    "NOT_VALID_WORD_FOR_GAME": "Teie arvamine ei ole selles mängus kehtiv sõna.",
+                    "INVALID_FORMAT": "Esitage oma vastus ainult selles vormingus.",
+                    "OTHER_ERROR": "Arvake ära eestikeelne viietäheline sõna.",
+                    "OTHER_DETAILS": "Ärge genereerige muud teksti. Palun proovige uuesti.",
+                    "ERROR_RESPONSE_FORMAT": "Arvamine ei vasta vormingureeglitele.",
+                    "ERROR_GAME_FORMAT": "Arvamine ei vasta mängureeglitele.",
+                    "RETRY": "Palun proovige uuesti."
                 },
                 "official_words_list":
                 [
@@ -45764,39 +45764,39 @@
             },
             "use_clue": false,
             "use_critic": false,
-            "guesser_prompt": "Tu esi valodas burvis, kuram patīk minēt vārdus, izmantojot dotos noteikumus.\n\nLaipni lūdzam Vārdulī! Tev ir seši mēģinājumi uzminēt mērķa vārdu, kas ir derīgs latviešu valodas vārds, kas sastāv no pieciem mazajiem burtiem (a–ž). Lūdzu, izmanto iezīmes \"skaidrojums:\" un \"minējums:\", lai sniegtu kodolīgu katra minējuma skaidrojumu.\n\nPiemēram, ja Tavs minējums ir \"saule\", Tavai atbildei jābūt\nskaidrojums: šis ir izplatīts piecu burtu latviešu valodas vārds, un es sāku savu minējumu ar šo vārdu.\nminējums: saule\n\nPēc katra minējuma Tava atbilde tiks pārbaudīta, un Tu saņemsi atsauksmi, kas norāda, kuri burti ir pareizi (zaļš), kuri burti ir pareizi, bet nepareizā pozīcijā (dzeltens) un kuri burti ir nepareizi (sarkans). Šī atsauksme var būt noderīga, lai noteiktu, kurus burtus iekļaut vai izslēgt no nākamā minējuma.\n\nPiemēram, atsauksme par \"saule\" varētu būt šāda:\nminējuma_atsauksme: s<dzeltens> a<dzeltens> u<zaļš> l<dzeltens> e<sarkans>\n\nPaskaidrojumā jāiekļauj informācija par to, kā minējuma_atsauksme tiek izmantota, lai nonāktu pie jauna minējuma.\n\nNeģenerē nekādu citu tekstu.\n\nSāksim ar Tavu pirmo minējumu.",
+            "guesser_prompt": "Oled keelevõlur, kellele meeldib sõnu antud reeglite järgi ära arvata.\n\nTere tulemast Wordle'i! Teil on kuus katset arvata ära sihtsõna, mis on kehtiv viietäheline eestikeelne väiketähtedega (a-ž) sõna. Palun kasutage silte \"selgitus:\" ja \"arvamine:\", et anda iga arvamise kohta lühike selgitus.\n\nNäiteks kui teie arvamine on \"pinks\", peaks teie vastus olema\nselgitus: see on tavaline viietäheline eestikeelne sõna ja ma alustan oma arvamist selle sõnaga.\narvamine: pinks\n\nPärast iga arvamist teie vastus kinnitatakse ja te saate tagasisidet, mis näitab, millised tähed on õiged (roheline), millised tähed on õiged, kuid vales kohas (kollane) ja millised tähed on valed (punane). See tagasiside võib olla kasulik järgmises arvamises sisalduvate või välistatavate tähtede määramisel.\n\nNäiteks tagasiside sõnale \"pinks\" võib olla:\narvamise_tagasiside: p<kollane> i<kollane> n<roheline> k<kollane> s<punane>\n\nSelgitus peaks sisaldama üksikasju selle kohta, kuidas arvamise_tagasiside kasutatakse uue arvamiseni jõudmiseks.\n\nÄrge genereerige muud teksti.\n\nAlustame teie esimese arvamisega.",
             "guesser_critic_prompt": "",
             "lang_keywords":
             {
                 "max_word_length": 5,
-                "clue_lang": "mājiens:",
-                "guess_lang": "minējums:",
-                "guess_word_lang": "vārds",
-                "explanation_lang": "skaidrojums:",
-                "explanataion_details_lang": "detaļas",
-                "guess_feedback_lang": "minējuma_atsauksme:",
-                "agreement_lang": "saskaņa:",
-                "agreement_word_lang": "jā vai nē",
-                "guess_agreement_lang": "minējumu_saskaņa:",
-                "agreement_explanation_lang": "saskaņas_skaidrojums:",
+                "clue_lang": "vihje:",
+                "guess_lang": "arvamine:",
+                "guess_word_lang": "sõna",
+                "explanation_lang": "selgitus:",
+                "explanataion_details_lang": "üksikasjad",
+                "guess_feedback_lang": "arvamise_tagasiside:",
+                "agreement_lang": "nõustumine:",
+                "agreement_word_lang": "jah või ei",
+                "guess_agreement_lang": "arvamise_nõustumine:",
+                "agreement_explanation_lang": "nõustumise_selgitus:",
                 "agreement_match_keywords_lang":
                 [
-                    "jā",
-                    "nē"
+                    "jah",
+                    "ei"
                 ],
                 "official_recognized_words_file_url": "https://raw.githubusercontent.com/M4t1ss/vardulis/refs/heads/master/src/constants/validGuesses.ts",
                 "word_clues_file_url": "",
                 "error_prompt_text":
                 {
-                    "INVALID_WORD_LENGTH": "Minējumam jābūt tieši 5 burtu garumā.",
-                    "INVALID_WORD": "Minējumam jāsatur tikai burti.",
-                    "NOT_VALID_WORD_FOR_GAME": "Minējums nav derīgs vārds šajā spēlē.",
-                    "INVALID_FORMAT": "Atbildi tikai šādā formātā.",
-                    "OTHER_ERROR": "Uzmini vārdu piecu burtu garumā latviešu valodā.",
-                    "OTHER_DETAILS": "Neģenerē nekādu citu tekstu. Lūdzu mēģini vēlreiz.",
-                    "ERROR_RESPONSE_FORMAT": "Minējums neatbilst formatējuma likumiem",
-                    "ERROR_GAME_FORMAT": "Minējums neatbilst spēles likumiem.",
-                    "RETRY": "Lūdzu mēģini vēlreiz."
+                    "INVALID_WORD_LENGTH": "Arvamises peab olema täpselt 5 tähte.",
+                    "INVALID_WORD": "Arvamine peab sisaldama ainult tähti.",
+                    "NOT_VALID_WORD_FOR_GAME": "Teie arvamine ei ole selles mängus kehtiv sõna.",
+                    "INVALID_FORMAT": "Esitage oma vastus ainult selles vormingus.",
+                    "OTHER_ERROR": "Arvake ära eestikeelne viietäheline sõna.",
+                    "OTHER_DETAILS": "Ärge genereerige muud teksti. Palun proovige uuesti.",
+                    "ERROR_RESPONSE_FORMAT": "Arvamine ei vasta vormingureeglitele.",
+                    "ERROR_GAME_FORMAT": "Arvamine ei vasta mängureeglitele.",
+                    "RETRY": "Palun proovige uuesti."
                 },
                 "official_words_list":
                 [

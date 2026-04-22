@@ -290,39 +290,39 @@
             },
             "use_clue": false,
             "use_critic": false,
-            "guesser_prompt": "Tu esi valodas burvis, kuram patīk minēt vārdus, izmantojot dotos noteikumus.\n\nLaipni lūdzam Vārdulī! Tev ir seši mēģinājumi uzminēt mērķa vārdu, kas ir derīgs latviešu valodas vārds, kas sastāv no pieciem mazajiem burtiem (a–ž). Lūdzu, izmanto iezīmes \"skaidrojums:\" un \"minējums:\", lai sniegtu kodolīgu katra minējuma skaidrojumu.\n\nPiemēram, ja Tavs minējums ir \"saule\", Tavai atbildei jābūt\nskaidrojums: šis ir izplatīts piecu burtu latviešu valodas vārds, un es sāku savu minējumu ar šo vārdu.\nminējums: saule\n\nPēc katra minējuma Tava atbilde tiks pārbaudīta, un Tu saņemsi atsauksmi, kas norāda, kuri burti ir pareizi (zaļš), kuri burti ir pareizi, bet nepareizā pozīcijā (dzeltens) un kuri burti ir nepareizi (sarkans). Šī atsauksme var būt noderīga, lai noteiktu, kurus burtus iekļaut vai izslēgt no nākamā minējuma.\n\nPiemēram, atsauksme par \"saule\" varētu būt šāda:\nminējuma_atsauksme: s<dzeltens> a<dzeltens> u<zaļš> l<dzeltens> e<sarkans>\n\nPaskaidrojumā jāiekļauj informācija par to, kā minējuma_atsauksme tiek izmantota, lai nonāktu pie jauna minējuma.\n\nNeģenerē nekādu citu tekstu.\n\nSāksim ar Tavu pirmo minējumu.",
+            "guesser_prompt": "Sie sind ein Sprachmagier, der gerne Wörter nach den vorgegebenen Regeln errät.\n\nWillkommen bei Wordle! Sie haben sechs Versuche, um das Zielwort zu erraten, ein gültiges deutsches Wort mit fünf Kleinbuchstaben (a-z). Bitte verwenden Sie die Tags „Erklärung:“ und „Rateversuch:“, um für jeden Rateversuch eine kurze Erklärung abzugeben.\n\nWenn Ihr Tipp zum Beispiel „Apfel“ lautet, sollte Ihre Antwort wie folgt aussehen:\nErklärung: Dies ist ein gebräuchliches deutsches Wort mit fünf Buchstaben, und ich beginne meinen Tipp mit diesem Wort.\nRateversuch: Apfel\n\nNach jedem Tipp wird Ihre Antwort validiert und Sie erhalten eine Rückmeldung, die angibt, welche Buchstaben korrekt sind (grün), welche Buchstaben korrekt, aber an der falschen Stelle sind (gelb) und welche Buchstaben falsch sind (rot). Dieses Feedback kann nützlich sein, um zu entscheiden, welche Buchstaben Sie in Ihren nächsten Tipp aufnehmen oder davon ausschließen sollten.\n\nDas Feedback für „Apfel“ könnte zum Beispiel so aussehen:\nFeedback_Rateversuch: a<gelb> p<gelb> p<grün> f<gelb> l<rot>\n\nDie Erklärung sollte Details darüber enthalten, wie das Feedback_Rateversuch verwendet wird, um zu einem neuen Tipp zu gelangen.\n\nGenerieren Sie keinen anderen Text.\n\nLassen Sie uns mit Ihrem ersten Tipp beginnen.",
             "guesser_critic_prompt": "",
             "lang_keywords":
             {
                 "max_word_length": 5,
-                "clue_lang": "mājiens:",
-                "guess_lang": "minējums:",
-                "guess_word_lang": "vārds",
-                "explanation_lang": "skaidrojums:",
-                "explanataion_details_lang": "detaļas",
-                "guess_feedback_lang": "minējuma_atsauksme:",
-                "agreement_lang": "saskaņa:",
-                "agreement_word_lang": "jā vai nē",
-                "guess_agreement_lang": "minējumu_saskaņa:",
-                "agreement_explanation_lang": "saskaņas_skaidrojums:",
+                "clue_lang": "Hinweis:",
+                "guess_lang": "Rateversuch:",
+                "guess_word_lang": "Wort",
+                "explanation_lang": "Erklärung:",
+                "explanataion_details_lang": "Details",
+                "guess_feedback_lang": "Feedback_Rateversuch:",
+                "agreement_lang": "Zustimmung:",
+                "agreement_word_lang": "ja oder nein",
+                "guess_agreement_lang": "Zustimmung_Rateversuch:",
+                "agreement_explanation_lang": "Erklärung_Zustimmung:",
                 "agreement_match_keywords_lang":
                 [
-                    "jā",
-                    "nē"
+                    "ja",
+                    "nein"
                 ],
                 "official_recognized_words_file_url": "https://raw.githubusercontent.com/M4t1ss/vardulis/refs/heads/master/src/constants/validGuesses.ts",
                 "word_clues_file_url": "",
                 "error_prompt_text":
                 {
-                    "INVALID_WORD_LENGTH": "Minējumam jābūt tieši 5 burtu garumā.",
-                    "INVALID_WORD": "Minējumam jāsatur tikai burti.",
-                    "NOT_VALID_WORD_FOR_GAME": "Minējums nav derīgs vārds šajā spēlē.",
-                    "INVALID_FORMAT": "Atbildi tikai šādā formātā.",
-                    "OTHER_ERROR": "Uzmini vārdu piecu burtu garumā latviešu valodā.",
-                    "OTHER_DETAILS": "Neģenerē nekādu citu tekstu. Lūdzu mēģini vēlreiz.",
-                    "ERROR_RESPONSE_FORMAT": "Minējums neatbilst formatējuma likumiem",
-                    "ERROR_GAME_FORMAT": "Minējums neatbilst spēles likumiem.",
-                    "RETRY": "Lūdzu mēģini vēlreiz."
+                    "INVALID_WORD_LENGTH": "Der Rateversuch sollte genau 5 Buchstaben haben.",
+                    "INVALID_WORD": "Der Rateversuch sollte nur Buchstaben enthalten.",
+                    "NOT_VALID_WORD_FOR_GAME": "Ihr Rateversuch ist kein gültiges Wort für dieses Spiel.",
+                    "INVALID_FORMAT": "Geben Sie Ihre Antwort nur in diesem Format an.",
+                    "OTHER_ERROR": "Erraten Sie ein deutsches Wort mit fünf Buchstaben.",
+                    "OTHER_DETAILS": "Generieren Sie keinen anderen Text. Bitte versuchen Sie es erneut.",
+                    "ERROR_RESPONSE_FORMAT": "Der Rateversuch entspricht nicht den Formatregeln",
+                    "ERROR_GAME_FORMAT": "Der Rateversuch entspricht nicht den Spielregeln.",
+                    "RETRY": "Bitte versuchen Sie es erneut."
                 },
                 "official_words_list":
                 [
@@ -23027,39 +23027,39 @@
             },
             "use_clue": false,
             "use_critic": false,
-            "guesser_prompt": "Tu esi valodas burvis, kuram patīk minēt vārdus, izmantojot dotos noteikumus.\n\nLaipni lūdzam Vārdulī! Tev ir seši mēģinājumi uzminēt mērķa vārdu, kas ir derīgs latviešu valodas vārds, kas sastāv no pieciem mazajiem burtiem (a–ž). Lūdzu, izmanto iezīmes \"skaidrojums:\" un \"minējums:\", lai sniegtu kodolīgu katra minējuma skaidrojumu.\n\nPiemēram, ja Tavs minējums ir \"saule\", Tavai atbildei jābūt\nskaidrojums: šis ir izplatīts piecu burtu latviešu valodas vārds, un es sāku savu minējumu ar šo vārdu.\nminējums: saule\n\nPēc katra minējuma Tava atbilde tiks pārbaudīta, un Tu saņemsi atsauksmi, kas norāda, kuri burti ir pareizi (zaļš), kuri burti ir pareizi, bet nepareizā pozīcijā (dzeltens) un kuri burti ir nepareizi (sarkans). Šī atsauksme var būt noderīga, lai noteiktu, kurus burtus iekļaut vai izslēgt no nākamā minējuma.\n\nPiemēram, atsauksme par \"saule\" varētu būt šāda:\nminējuma_atsauksme: s<dzeltens> a<dzeltens> u<zaļš> l<dzeltens> e<sarkans>\n\nPaskaidrojumā jāiekļauj informācija par to, kā minējuma_atsauksme tiek izmantota, lai nonāktu pie jauna minējuma.\n\nNeģenerē nekādu citu tekstu.\n\nSāksim ar Tavu pirmo minējumu.",
+            "guesser_prompt": "Sie sind ein Sprachmagier, der gerne Wörter nach den vorgegebenen Regeln errät.\n\nWillkommen bei Wordle! Sie haben sechs Versuche, um das Zielwort zu erraten, ein gültiges deutsches Wort mit fünf Kleinbuchstaben (a-z). Bitte verwenden Sie die Tags „Erklärung:“ und „Rateversuch:“, um für jeden Rateversuch eine kurze Erklärung abzugeben.\n\nWenn Ihr Tipp zum Beispiel „Apfel“ lautet, sollte Ihre Antwort wie folgt aussehen:\nErklärung: Dies ist ein gebräuchliches deutsches Wort mit fünf Buchstaben, und ich beginne meinen Tipp mit diesem Wort.\nRateversuch: Apfel\n\nNach jedem Tipp wird Ihre Antwort validiert und Sie erhalten eine Rückmeldung, die angibt, welche Buchstaben korrekt sind (grün), welche Buchstaben korrekt, aber an der falschen Stelle sind (gelb) und welche Buchstaben falsch sind (rot). Dieses Feedback kann nützlich sein, um zu entscheiden, welche Buchstaben Sie in Ihren nächsten Tipp aufnehmen oder davon ausschließen sollten.\n\nDas Feedback für „Apfel“ könnte zum Beispiel so aussehen:\nFeedback_Rateversuch: a<gelb> p<gelb> p<grün> f<gelb> l<rot>\n\nDie Erklärung sollte Details darüber enthalten, wie das Feedback_Rateversuch verwendet wird, um zu einem neuen Tipp zu gelangen.\n\nGenerieren Sie keinen anderen Text.\n\nLassen Sie uns mit Ihrem ersten Tipp beginnen.",
             "guesser_critic_prompt": "",
             "lang_keywords":
             {
                 "max_word_length": 5,
-                "clue_lang": "mājiens:",
-                "guess_lang": "minējums:",
-                "guess_word_lang": "vārds",
-                "explanation_lang": "skaidrojums:",
-                "explanataion_details_lang": "detaļas",
-                "guess_feedback_lang": "minējuma_atsauksme:",
-                "agreement_lang": "saskaņa:",
-                "agreement_word_lang": "jā vai nē",
-                "guess_agreement_lang": "minējumu_saskaņa:",
-                "agreement_explanation_lang": "saskaņas_skaidrojums:",
+                "clue_lang": "Hinweis:",
+                "guess_lang": "Rateversuch:",
+                "guess_word_lang": "Wort",
+                "explanation_lang": "Erklärung:",
+                "explanataion_details_lang": "Details",
+                "guess_feedback_lang": "Feedback_Rateversuch:",
+                "agreement_lang": "Zustimmung:",
+                "agreement_word_lang": "ja oder nein",
+                "guess_agreement_lang": "Zustimmung_Rateversuch:",
+                "agreement_explanation_lang": "Erklärung_Zustimmung:",
                 "agreement_match_keywords_lang":
                 [
-                    "jā",
-                    "nē"
+                    "ja",
+                    "nein"
                 ],
                 "official_recognized_words_file_url": "https://raw.githubusercontent.com/M4t1ss/vardulis/refs/heads/master/src/constants/validGuesses.ts",
                 "word_clues_file_url": "",
                 "error_prompt_text":
                 {
-                    "INVALID_WORD_LENGTH": "Minējumam jābūt tieši 5 burtu garumā.",
-                    "INVALID_WORD": "Minējumam jāsatur tikai burti.",
-                    "NOT_VALID_WORD_FOR_GAME": "Minējums nav derīgs vārds šajā spēlē.",
-                    "INVALID_FORMAT": "Atbildi tikai šādā formātā.",
-                    "OTHER_ERROR": "Uzmini vārdu piecu burtu garumā latviešu valodā.",
-                    "OTHER_DETAILS": "Neģenerē nekādu citu tekstu. Lūdzu mēģini vēlreiz.",
-                    "ERROR_RESPONSE_FORMAT": "Minējums neatbilst formatējuma likumiem",
-                    "ERROR_GAME_FORMAT": "Minējums neatbilst spēles likumiem.",
-                    "RETRY": "Lūdzu mēģini vēlreiz."
+                    "INVALID_WORD_LENGTH": "Der Rateversuch sollte genau 5 Buchstaben haben.",
+                    "INVALID_WORD": "Der Rateversuch sollte nur Buchstaben enthalten.",
+                    "NOT_VALID_WORD_FOR_GAME": "Ihr Rateversuch ist kein gültiges Wort für dieses Spiel.",
+                    "INVALID_FORMAT": "Geben Sie Ihre Antwort nur in diesem Format an.",
+                    "OTHER_ERROR": "Erraten Sie ein deutsches Wort mit fünf Buchstaben.",
+                    "OTHER_DETAILS": "Generieren Sie keinen anderen Text. Bitte versuchen Sie es erneut.",
+                    "ERROR_RESPONSE_FORMAT": "Der Rateversuch entspricht nicht den Formatregeln",
+                    "ERROR_GAME_FORMAT": "Der Rateversuch entspricht nicht den Spielregeln.",
+                    "RETRY": "Bitte versuchen Sie es erneut."
                 },
                 "official_words_list":
                 [
@@ -45764,39 +45764,39 @@
             },
             "use_clue": false,
             "use_critic": false,
-            "guesser_prompt": "Tu esi valodas burvis, kuram patīk minēt vārdus, izmantojot dotos noteikumus.\n\nLaipni lūdzam Vārdulī! Tev ir seši mēģinājumi uzminēt mērķa vārdu, kas ir derīgs latviešu valodas vārds, kas sastāv no pieciem mazajiem burtiem (a–ž). Lūdzu, izmanto iezīmes \"skaidrojums:\" un \"minējums:\", lai sniegtu kodolīgu katra minējuma skaidrojumu.\n\nPiemēram, ja Tavs minējums ir \"saule\", Tavai atbildei jābūt\nskaidrojums: šis ir izplatīts piecu burtu latviešu valodas vārds, un es sāku savu minējumu ar šo vārdu.\nminējums: saule\n\nPēc katra minējuma Tava atbilde tiks pārbaudīta, un Tu saņemsi atsauksmi, kas norāda, kuri burti ir pareizi (zaļš), kuri burti ir pareizi, bet nepareizā pozīcijā (dzeltens) un kuri burti ir nepareizi (sarkans). Šī atsauksme var būt noderīga, lai noteiktu, kurus burtus iekļaut vai izslēgt no nākamā minējuma.\n\nPiemēram, atsauksme par \"saule\" varētu būt šāda:\nminējuma_atsauksme: s<dzeltens> a<dzeltens> u<zaļš> l<dzeltens> e<sarkans>\n\nPaskaidrojumā jāiekļauj informācija par to, kā minējuma_atsauksme tiek izmantota, lai nonāktu pie jauna minējuma.\n\nNeģenerē nekādu citu tekstu.\n\nSāksim ar Tavu pirmo minējumu.",
+            "guesser_prompt": "Sie sind ein Sprachmagier, der gerne Wörter nach den vorgegebenen Regeln errät.\n\nWillkommen bei Wordle! Sie haben sechs Versuche, um das Zielwort zu erraten, ein gültiges deutsches Wort mit fünf Kleinbuchstaben (a-z). Bitte verwenden Sie die Tags „Erklärung:“ und „Rateversuch:“, um für jeden Rateversuch eine kurze Erklärung abzugeben.\n\nWenn Ihr Tipp zum Beispiel „Apfel“ lautet, sollte Ihre Antwort wie folgt aussehen:\nErklärung: Dies ist ein gebräuchliches deutsches Wort mit fünf Buchstaben, und ich beginne meinen Tipp mit diesem Wort.\nRateversuch: Apfel\n\nNach jedem Tipp wird Ihre Antwort validiert und Sie erhalten eine Rückmeldung, die angibt, welche Buchstaben korrekt sind (grün), welche Buchstaben korrekt, aber an der falschen Stelle sind (gelb) und welche Buchstaben falsch sind (rot). Dieses Feedback kann nützlich sein, um zu entscheiden, welche Buchstaben Sie in Ihren nächsten Tipp aufnehmen oder davon ausschließen sollten.\n\nDas Feedback für „Apfel“ könnte zum Beispiel so aussehen:\nFeedback_Rateversuch: a<gelb> p<gelb> p<grün> f<gelb> l<rot>\n\nDie Erklärung sollte Details darüber enthalten, wie das Feedback_Rateversuch verwendet wird, um zu einem neuen Tipp zu gelangen.\n\nGenerieren Sie keinen anderen Text.\n\nLassen Sie uns mit Ihrem ersten Tipp beginnen.",
             "guesser_critic_prompt": "",
             "lang_keywords":
             {
                 "max_word_length": 5,
-                "clue_lang": "mājiens:",
-                "guess_lang": "minējums:",
-                "guess_word_lang": "vārds",
-                "explanation_lang": "skaidrojums:",
-                "explanataion_details_lang": "detaļas",
-                "guess_feedback_lang": "minējuma_atsauksme:",
-                "agreement_lang": "saskaņa:",
-                "agreement_word_lang": "jā vai nē",
-                "guess_agreement_lang": "minējumu_saskaņa:",
-                "agreement_explanation_lang": "saskaņas_skaidrojums:",
+                "clue_lang": "Hinweis:",
+                "guess_lang": "Rateversuch:",
+                "guess_word_lang": "Wort",
+                "explanation_lang": "Erklärung:",
+                "explanataion_details_lang": "Details",
+                "guess_feedback_lang": "Feedback_Rateversuch:",
+                "agreement_lang": "Zustimmung:",
+                "agreement_word_lang": "ja oder nein",
+                "guess_agreement_lang": "Zustimmung_Rateversuch:",
+                "agreement_explanation_lang": "Erklärung_Zustimmung:",
                 "agreement_match_keywords_lang":
                 [
-                    "jā",
-                    "nē"
+                    "ja",
+                    "nein"
                 ],
                 "official_recognized_words_file_url": "https://raw.githubusercontent.com/M4t1ss/vardulis/refs/heads/master/src/constants/validGuesses.ts",
                 "word_clues_file_url": "",
                 "error_prompt_text":
                 {
-                    "INVALID_WORD_LENGTH": "Minējumam jābūt tieši 5 burtu garumā.",
-                    "INVALID_WORD": "Minējumam jāsatur tikai burti.",
-                    "NOT_VALID_WORD_FOR_GAME": "Minējums nav derīgs vārds šajā spēlē.",
-                    "INVALID_FORMAT": "Atbildi tikai šādā formātā.",
-                    "OTHER_ERROR": "Uzmini vārdu piecu burtu garumā latviešu valodā.",
-                    "OTHER_DETAILS": "Neģenerē nekādu citu tekstu. Lūdzu mēģini vēlreiz.",
-                    "ERROR_RESPONSE_FORMAT": "Minējums neatbilst formatējuma likumiem",
-                    "ERROR_GAME_FORMAT": "Minējums neatbilst spēles likumiem.",
-                    "RETRY": "Lūdzu mēģini vēlreiz."
+                    "INVALID_WORD_LENGTH": "Der Rateversuch sollte genau 5 Buchstaben haben.",
+                    "INVALID_WORD": "Der Rateversuch sollte nur Buchstaben enthalten.",
+                    "NOT_VALID_WORD_FOR_GAME": "Ihr Rateversuch ist kein gültiges Wort für dieses Spiel.",
+                    "INVALID_FORMAT": "Geben Sie Ihre Antwort nur in diesem Format an.",
+                    "OTHER_ERROR": "Erraten Sie ein deutsches Wort mit fünf Buchstaben.",
+                    "OTHER_DETAILS": "Generieren Sie keinen anderen Text. Bitte versuchen Sie es erneut.",
+                    "ERROR_RESPONSE_FORMAT": "Der Rateversuch entspricht nicht den Formatregeln",
+                    "ERROR_GAME_FORMAT": "Der Rateversuch entspricht nicht den Spielregeln.",
+                    "RETRY": "Bitte versuchen Sie es erneut."
                 },
                 "official_words_list":
                 [

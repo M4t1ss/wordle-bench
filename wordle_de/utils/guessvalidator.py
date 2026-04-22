@@ -20,7 +20,7 @@ class GuessValidator:
         response = ""
         # Check if the input word is the target word
         if guessed_word == target_word:
-            response = [l + "<zaļš>" for l in guessed_word]
+            response = [l + "<grün>" for l in guessed_word]
             response = " ".join(response)
             return response
 
@@ -43,11 +43,11 @@ class GuessValidator:
         # Prepare the response
         for i in range(len(target_word)):
             if result[i] == "🟩":
-                response += guessed_word[i] + "<zaļš> "
+                response += guessed_word[i] + "<grün> "
             elif result[i] == "🟨":
-                response += guessed_word[i] + "<dzeltens> "
+                response += guessed_word[i] + "<gelb> "
             else:
-                response += guessed_word[i] + "<sarkans> "
+                response += guessed_word[i] + "<rot> "
         return response.strip()
 
 
@@ -65,4 +65,4 @@ if __name__ == "__main__":
 
     for target_word, guessed_word in tests:
         guess = GuessValidator(target_word)
-        print(f"Mērķis: {target_word}, Minējums: {guessed_word}, Rezultāts: {guess.validate(guessed_word)}")
+        print(f"Ziel: {target_word}, Rateversuch: {guessed_word}, Ergebnis: {guess.validate(guessed_word)}")

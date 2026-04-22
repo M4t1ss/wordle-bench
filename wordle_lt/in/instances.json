@@ -290,39 +290,39 @@
             },
             "use_clue": false,
             "use_critic": false,
-            "guesser_prompt": "Tu esi valodas burvis, kuram patīk minēt vārdus, izmantojot dotos noteikumus.\n\nLaipni lūdzam Vārdulī! Tev ir seši mēģinājumi uzminēt mērķa vārdu, kas ir derīgs latviešu valodas vārds, kas sastāv no pieciem mazajiem burtiem (a–ž). Lūdzu, izmanto iezīmes \"skaidrojums:\" un \"minējums:\", lai sniegtu kodolīgu katra minējuma skaidrojumu.\n\nPiemēram, ja Tavs minējums ir \"saule\", Tavai atbildei jābūt\nskaidrojums: šis ir izplatīts piecu burtu latviešu valodas vārds, un es sāku savu minējumu ar šo vārdu.\nminējums: saule\n\nPēc katra minējuma Tava atbilde tiks pārbaudīta, un Tu saņemsi atsauksmi, kas norāda, kuri burti ir pareizi (zaļš), kuri burti ir pareizi, bet nepareizā pozīcijā (dzeltens) un kuri burti ir nepareizi (sarkans). Šī atsauksme var būt noderīga, lai noteiktu, kurus burtus iekļaut vai izslēgt no nākamā minējuma.\n\nPiemēram, atsauksme par \"saule\" varētu būt šāda:\nminējuma_atsauksme: s<dzeltens> a<dzeltens> u<zaļš> l<dzeltens> e<sarkans>\n\nPaskaidrojumā jāiekļauj informācija par to, kā minējuma_atsauksme tiek izmantota, lai nonāktu pie jauna minējuma.\n\nNeģenerē nekādu citu tekstu.\n\nSāksim ar Tavu pirmo minējumu.",
+            "guesser_prompt": "Jūs esate kalbos burtininkas, kuriam patinka pagal nurodytas taisykles spėlioti žodžius.\n\nSveiki atvykę į „Wordle“! Turite šešis bandymus lietuviškam žodžiui, sudarytam iš penkių mažųjų raidžių (a-ž), atspėti. Prie kiekvieno spėjimo pridėkite trumpą paaiškinimą, naudodami žymas „paaiškinimas:“ ir „spėjimas:“.\n\nPavyzdžiui, jei jūsų spėjimas yra „saulė“, tai atsakymas turėtų būti\npaaiškinimas: tai iš penkių raidžių sudarytas lietuviškas žodis ir aš pradedu spėjimą šiuo žodžiu.\nspėjimas: saulė\n\nPo kiekvieno spėjimo jūsų atsakymas bus patikrintas ir gausite grįžtamąjį ryšį, nurodantį, kurios raidės yra teisingos (žalia), kurios raidės yra teisingos, bet netinkamose vietose (geltona), o kurios raidės yra neteisingos (raudona). Grįžtamasis ryšys gali būti naudingas sprendžiant, kurias raides įtraukti ar išmesti kitame spėjime.\n\nPavyzdžiui, „saulė“ grįžtamasis ryšys galėtų būti:\nspėjimo_atsakymas: s<geltona> a<geltona> u<žalia> l<geltona> ė<raudona>\n\nPaaiškinime turėtų būti išsami informacija apie tai, kaip spėjimo_atsakymas naudojamas naujam spėjimui suformuoti.\n\nNerašykite jokio kito teksto.\n\nPradėkime nuo pirmojo jūsų spėjimo.",
             "guesser_critic_prompt": "",
             "lang_keywords":
             {
                 "max_word_length": 5,
-                "clue_lang": "mājiens:",
-                "guess_lang": "minējums:",
-                "guess_word_lang": "vārds",
-                "explanation_lang": "skaidrojums:",
-                "explanataion_details_lang": "detaļas",
-                "guess_feedback_lang": "minējuma_atsauksme:",
-                "agreement_lang": "saskaņa:",
-                "agreement_word_lang": "jā vai nē",
-                "guess_agreement_lang": "minējumu_saskaņa:",
-                "agreement_explanation_lang": "saskaņas_skaidrojums:",
+                "clue_lang": "užuomina:",
+                "guess_lang": "spėjimas:",
+                "guess_word_lang": "žodis",
+                "explanation_lang": "paaiškinimas:",
+                "explanataion_details_lang": "detalės",
+                "guess_feedback_lang": "spėjimo_atsakymas:",
+                "agreement_lang": "sutikimas:",
+                "agreement_word_lang": "taip arba ne",
+                "guess_agreement_lang": "spėjimo_sutikimas:",
+                "agreement_explanation_lang": "sutikimo_paaiškinimas:",
                 "agreement_match_keywords_lang":
                 [
-                    "jā",
-                    "nē"
+                    "taip",
+                    "ne"
                 ],
                 "official_recognized_words_file_url": "https://raw.githubusercontent.com/M4t1ss/vardulis/refs/heads/master/src/constants/validGuesses.ts",
                 "word_clues_file_url": "",
                 "error_prompt_text":
                 {
-                    "INVALID_WORD_LENGTH": "Minējumam jābūt tieši 5 burtu garumā.",
-                    "INVALID_WORD": "Minējumam jāsatur tikai burti.",
-                    "NOT_VALID_WORD_FOR_GAME": "Minējums nav derīgs vārds šajā spēlē.",
-                    "INVALID_FORMAT": "Atbildi tikai šādā formātā.",
-                    "OTHER_ERROR": "Uzmini vārdu piecu burtu garumā latviešu valodā.",
-                    "OTHER_DETAILS": "Neģenerē nekādu citu tekstu. Lūdzu mēģini vēlreiz.",
-                    "ERROR_RESPONSE_FORMAT": "Minējums neatbilst formatējuma likumiem",
-                    "ERROR_GAME_FORMAT": "Minējums neatbilst spēles likumiem.",
-                    "RETRY": "Lūdzu mēģini vēlreiz."
+                    "INVALID_WORD_LENGTH": "Spėjimas turi būti sudarytas būtent iš 5 raidžių.",
+                    "INVALID_WORD": "Spėjime turi būti tik raidės.",
+                    "NOT_VALID_WORD_FOR_GAME": "Jūsų spėjimas nėra tinkamas šio žaidimo žodis.",
+                    "INVALID_FORMAT": "Pateikite atsakymą tik tokiu formatu.",
+                    "OTHER_ERROR": "Atspėkite lietuvišką penkių raidžių žodį.",
+                    "OTHER_DETAILS": "Nerašykite jokio kito teksto. Bandykite dar kartą.",
+                    "ERROR_RESPONSE_FORMAT": "Spėjimas neatitinka formato taisyklių.",
+                    "ERROR_GAME_FORMAT": "Spėjimas neatitinka žaidimo taisyklių.",
+                    "RETRY": "Bandykite dar kartą."
                 },
                 "official_words_list":
                 [
@@ -23027,39 +23027,39 @@
             },
             "use_clue": false,
             "use_critic": false,
-            "guesser_prompt": "Tu esi valodas burvis, kuram patīk minēt vārdus, izmantojot dotos noteikumus.\n\nLaipni lūdzam Vārdulī! Tev ir seši mēģinājumi uzminēt mērķa vārdu, kas ir derīgs latviešu valodas vārds, kas sastāv no pieciem mazajiem burtiem (a–ž). Lūdzu, izmanto iezīmes \"skaidrojums:\" un \"minējums:\", lai sniegtu kodolīgu katra minējuma skaidrojumu.\n\nPiemēram, ja Tavs minējums ir \"saule\", Tavai atbildei jābūt\nskaidrojums: šis ir izplatīts piecu burtu latviešu valodas vārds, un es sāku savu minējumu ar šo vārdu.\nminējums: saule\n\nPēc katra minējuma Tava atbilde tiks pārbaudīta, un Tu saņemsi atsauksmi, kas norāda, kuri burti ir pareizi (zaļš), kuri burti ir pareizi, bet nepareizā pozīcijā (dzeltens) un kuri burti ir nepareizi (sarkans). Šī atsauksme var būt noderīga, lai noteiktu, kurus burtus iekļaut vai izslēgt no nākamā minējuma.\n\nPiemēram, atsauksme par \"saule\" varētu būt šāda:\nminējuma_atsauksme: s<dzeltens> a<dzeltens> u<zaļš> l<dzeltens> e<sarkans>\n\nPaskaidrojumā jāiekļauj informācija par to, kā minējuma_atsauksme tiek izmantota, lai nonāktu pie jauna minējuma.\n\nNeģenerē nekādu citu tekstu.\n\nSāksim ar Tavu pirmo minējumu.",
+            "guesser_prompt": "Jūs esate kalbos burtininkas, kuriam patinka pagal nurodytas taisykles spėlioti žodžius.\n\nSveiki atvykę į „Wordle“! Turite šešis bandymus lietuviškam žodžiui, sudarytam iš penkių mažųjų raidžių (a-ž), atspėti. Prie kiekvieno spėjimo pridėkite trumpą paaiškinimą, naudodami žymas „paaiškinimas:“ ir „spėjimas:“.\n\nPavyzdžiui, jei jūsų spėjimas yra „saulė“, tai atsakymas turėtų būti\npaaiškinimas: tai iš penkių raidžių sudarytas lietuviškas žodis ir aš pradedu spėjimą šiuo žodžiu.\nspėjimas: saulė\n\nPo kiekvieno spėjimo jūsų atsakymas bus patikrintas ir gausite grįžtamąjį ryšį, nurodantį, kurios raidės yra teisingos (žalia), kurios raidės yra teisingos, bet netinkamose vietose (geltona), o kurios raidės yra neteisingos (raudona). Grįžtamasis ryšys gali būti naudingas sprendžiant, kurias raides įtraukti ar išmesti kitame spėjime.\n\nPavyzdžiui, „saulė“ grįžtamasis ryšys galėtų būti:\nspėjimo_atsakymas: s<geltona> a<geltona> u<žalia> l<geltona> ė<raudona>\n\nPaaiškinime turėtų būti išsami informacija apie tai, kaip spėjimo_atsakymas naudojamas naujam spėjimui suformuoti.\n\nNerašykite jokio kito teksto.\n\nPradėkime nuo pirmojo jūsų spėjimo.",
             "guesser_critic_prompt": "",
             "lang_keywords":
             {
                 "max_word_length": 5,
-                "clue_lang": "mājiens:",
-                "guess_lang": "minējums:",
-                "guess_word_lang": "vārds",
-                "explanation_lang": "skaidrojums:",
-                "explanataion_details_lang": "detaļas",
-                "guess_feedback_lang": "minējuma_atsauksme:",
-                "agreement_lang": "saskaņa:",
-                "agreement_word_lang": "jā vai nē",
-                "guess_agreement_lang": "minējumu_saskaņa:",
-                "agreement_explanation_lang": "saskaņas_skaidrojums:",
+                "clue_lang": "užuomina:",
+                "guess_lang": "spėjimas:",
+                "guess_word_lang": "žodis",
+                "explanation_lang": "paaiškinimas:",
+                "explanataion_details_lang": "detalės",
+                "guess_feedback_lang": "spėjimo_atsakymas:",
+                "agreement_lang": "sutikimas:",
+                "agreement_word_lang": "taip arba ne",
+                "guess_agreement_lang": "spėjimo_sutikimas:",
+                "agreement_explanation_lang": "sutikimo_paaiškinimas:",
                 "agreement_match_keywords_lang":
                 [
-                    "jā",
-                    "nē"
+                    "taip",
+                    "ne"
                 ],
                 "official_recognized_words_file_url": "https://raw.githubusercontent.com/M4t1ss/vardulis/refs/heads/master/src/constants/validGuesses.ts",
                 "word_clues_file_url": "",
                 "error_prompt_text":
                 {
-                    "INVALID_WORD_LENGTH": "Minējumam jābūt tieši 5 burtu garumā.",
-                    "INVALID_WORD": "Minējumam jāsatur tikai burti.",
-                    "NOT_VALID_WORD_FOR_GAME": "Minējums nav derīgs vārds šajā spēlē.",
-                    "INVALID_FORMAT": "Atbildi tikai šādā formātā.",
-                    "OTHER_ERROR": "Uzmini vārdu piecu burtu garumā latviešu valodā.",
-                    "OTHER_DETAILS": "Neģenerē nekādu citu tekstu. Lūdzu mēģini vēlreiz.",
-                    "ERROR_RESPONSE_FORMAT": "Minējums neatbilst formatējuma likumiem",
-                    "ERROR_GAME_FORMAT": "Minējums neatbilst spēles likumiem.",
-                    "RETRY": "Lūdzu mēģini vēlreiz."
+                    "INVALID_WORD_LENGTH": "Spėjimas turi būti sudarytas būtent iš 5 raidžių.",
+                    "INVALID_WORD": "Spėjime turi būti tik raidės.",
+                    "NOT_VALID_WORD_FOR_GAME": "Jūsų spėjimas nėra tinkamas šio žaidimo žodis.",
+                    "INVALID_FORMAT": "Pateikite atsakymą tik tokiu formatu.",
+                    "OTHER_ERROR": "Atspėkite lietuvišką penkių raidžių žodį.",
+                    "OTHER_DETAILS": "Nerašykite jokio kito teksto. Bandykite dar kartą.",
+                    "ERROR_RESPONSE_FORMAT": "Spėjimas neatitinka formato taisyklių.",
+                    "ERROR_GAME_FORMAT": "Spėjimas neatitinka žaidimo taisyklių.",
+                    "RETRY": "Bandykite dar kartą."
                 },
                 "official_words_list":
                 [
@@ -45764,39 +45764,39 @@
             },
             "use_clue": false,
             "use_critic": false,
-            "guesser_prompt": "Tu esi valodas burvis, kuram patīk minēt vārdus, izmantojot dotos noteikumus.\n\nLaipni lūdzam Vārdulī! Tev ir seši mēģinājumi uzminēt mērķa vārdu, kas ir derīgs latviešu valodas vārds, kas sastāv no pieciem mazajiem burtiem (a–ž). Lūdzu, izmanto iezīmes \"skaidrojums:\" un \"minējums:\", lai sniegtu kodolīgu katra minējuma skaidrojumu.\n\nPiemēram, ja Tavs minējums ir \"saule\", Tavai atbildei jābūt\nskaidrojums: šis ir izplatīts piecu burtu latviešu valodas vārds, un es sāku savu minējumu ar šo vārdu.\nminējums: saule\n\nPēc katra minējuma Tava atbilde tiks pārbaudīta, un Tu saņemsi atsauksmi, kas norāda, kuri burti ir pareizi (zaļš), kuri burti ir pareizi, bet nepareizā pozīcijā (dzeltens) un kuri burti ir nepareizi (sarkans). Šī atsauksme var būt noderīga, lai noteiktu, kurus burtus iekļaut vai izslēgt no nākamā minējuma.\n\nPiemēram, atsauksme par \"saule\" varētu būt šāda:\nminējuma_atsauksme: s<dzeltens> a<dzeltens> u<zaļš> l<dzeltens> e<sarkans>\n\nPaskaidrojumā jāiekļauj informācija par to, kā minējuma_atsauksme tiek izmantota, lai nonāktu pie jauna minējuma.\n\nNeģenerē nekādu citu tekstu.\n\nSāksim ar Tavu pirmo minējumu.",
+            "guesser_prompt": "Jūs esate kalbos burtininkas, kuriam patinka pagal nurodytas taisykles spėlioti žodžius.\n\nSveiki atvykę į „Wordle“! Turite šešis bandymus lietuviškam žodžiui, sudarytam iš penkių mažųjų raidžių (a-ž), atspėti. Prie kiekvieno spėjimo pridėkite trumpą paaiškinimą, naudodami žymas „paaiškinimas:“ ir „spėjimas:“.\n\nPavyzdžiui, jei jūsų spėjimas yra „saulė“, tai atsakymas turėtų būti\npaaiškinimas: tai iš penkių raidžių sudarytas lietuviškas žodis ir aš pradedu spėjimą šiuo žodžiu.\nspėjimas: saulė\n\nPo kiekvieno spėjimo jūsų atsakymas bus patikrintas ir gausite grįžtamąjį ryšį, nurodantį, kurios raidės yra teisingos (žalia), kurios raidės yra teisingos, bet netinkamose vietose (geltona), o kurios raidės yra neteisingos (raudona). Grįžtamasis ryšys gali būti naudingas sprendžiant, kurias raides įtraukti ar išmesti kitame spėjime.\n\nPavyzdžiui, „saulė“ grįžtamasis ryšys galėtų būti:\nspėjimo_atsakymas: s<geltona> a<geltona> u<žalia> l<geltona> ė<raudona>\n\nPaaiškinime turėtų būti išsami informacija apie tai, kaip spėjimo_atsakymas naudojamas naujam spėjimui suformuoti.\n\nNerašykite jokio kito teksto.\n\nPradėkime nuo pirmojo jūsų spėjimo.",
             "guesser_critic_prompt": "",
             "lang_keywords":
             {
                 "max_word_length": 5,
-                "clue_lang": "mājiens:",
-                "guess_lang": "minējums:",
-                "guess_word_lang": "vārds",
-                "explanation_lang": "skaidrojums:",
-                "explanataion_details_lang": "detaļas",
-                "guess_feedback_lang": "minējuma_atsauksme:",
-                "agreement_lang": "saskaņa:",
-                "agreement_word_lang": "jā vai nē",
-                "guess_agreement_lang": "minējumu_saskaņa:",
-                "agreement_explanation_lang": "saskaņas_skaidrojums:",
+                "clue_lang": "užuomina:",
+                "guess_lang": "spėjimas:",
+                "guess_word_lang": "žodis",
+                "explanation_lang": "paaiškinimas:",
+                "explanataion_details_lang": "detalės",
+                "guess_feedback_lang": "spėjimo_atsakymas:",
+                "agreement_lang": "sutikimas:",
+                "agreement_word_lang": "taip arba ne",
+                "guess_agreement_lang": "spėjimo_sutikimas:",
+                "agreement_explanation_lang": "sutikimo_paaiškinimas:",
                 "agreement_match_keywords_lang":
                 [
-                    "jā",
-                    "nē"
+                    "taip",
+                    "ne"
                 ],
                 "official_recognized_words_file_url": "https://raw.githubusercontent.com/M4t1ss/vardulis/refs/heads/master/src/constants/validGuesses.ts",
                 "word_clues_file_url": "",
                 "error_prompt_text":
                 {
-                    "INVALID_WORD_LENGTH": "Minējumam jābūt tieši 5 burtu garumā.",
-                    "INVALID_WORD": "Minējumam jāsatur tikai burti.",
-                    "NOT_VALID_WORD_FOR_GAME": "Minējums nav derīgs vārds šajā spēlē.",
-                    "INVALID_FORMAT": "Atbildi tikai šādā formātā.",
-                    "OTHER_ERROR": "Uzmini vārdu piecu burtu garumā latviešu valodā.",
-                    "OTHER_DETAILS": "Neģenerē nekādu citu tekstu. Lūdzu mēģini vēlreiz.",
-                    "ERROR_RESPONSE_FORMAT": "Minējums neatbilst formatējuma likumiem",
-                    "ERROR_GAME_FORMAT": "Minējums neatbilst spēles likumiem.",
-                    "RETRY": "Lūdzu mēģini vēlreiz."
+                    "INVALID_WORD_LENGTH": "Spėjimas turi būti sudarytas būtent iš 5 raidžių.",
+                    "INVALID_WORD": "Spėjime turi būti tik raidės.",
+                    "NOT_VALID_WORD_FOR_GAME": "Jūsų spėjimas nėra tinkamas šio žaidimo žodis.",
+                    "INVALID_FORMAT": "Pateikite atsakymą tik tokiu formatu.",
+                    "OTHER_ERROR": "Atspėkite lietuvišką penkių raidžių žodį.",
+                    "OTHER_DETAILS": "Nerašykite jokio kito teksto. Bandykite dar kartą.",
+                    "ERROR_RESPONSE_FORMAT": "Spėjimas neatitinka formato taisyklių.",
+                    "ERROR_GAME_FORMAT": "Spėjimas neatitinka žaidimo taisyklių.",
+                    "RETRY": "Bandykite dar kartą."
                 },
                 "official_words_list":
                 [

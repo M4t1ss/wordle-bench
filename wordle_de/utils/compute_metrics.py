@@ -19,9 +19,9 @@ def turns_closeness(guesser_feedbacks: List[str]):
         # Add a score of 0 for letters in red
         score = 0
         for letter in feedback.split(" "):
-            if "zaļš" in letter:
+            if "grün" in letter:
                 score += 5
-            elif "dzeltens" in letter:
+            elif "gelb" in letter:
                 score += 3
         score_list.append(score)
 
@@ -47,12 +47,12 @@ def turns_strategy(guesser_feedbacks: List[str], is_aborted: bool):
         guess1_use = []
         guess1_change = []
 
-        if "sarkans" in guess1_dict:
-            guess1_not_use = guess1_dict["sarkans"]
-        if "zaļš" in guess1_dict:
-            guess1_use = guess1_dict["zaļš"]
-        if "dzeltens" in guess1_dict:
-            guess1_change = guess1_dict["dzeltens"]
+        if "rot" in guess1_dict:
+            guess1_not_use = guess1_dict["rot"]
+        if "grün" in guess1_dict:
+            guess1_use = guess1_dict["grün"]
+        if "gelb" in guess1_dict:
+            guess1_change = guess1_dict["gelb"]
         score = 0
 
         result = len(set(guess1_not_use) & set(guess2_list))
