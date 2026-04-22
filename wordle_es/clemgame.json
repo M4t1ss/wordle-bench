@@ -1,37 +1,13 @@
 [
   {
-    "game_name": "wordle_lv",
-    "description": "Vārdulis 5-burtu vārdu minēšanas spēle.",
-    "main_game": "wordle_lv",
+    "game_name": "wordle_es",
+    "description": "Juego de adivinar palabras de 5 letras Wordle.",
+    "main_game": "wordle_es",
     "players": 1,
     "image": "none",
-    "languages": ["lv"],
+    "languages": ["es"],
     "benchmark": ["2.0"],
     "regression": "small",
     "roles": ["Guesser"]
-  },
-  {
-    "game_name": "wordle_lv_withclue",
-    "description": "Vārdulis 5-burtu vārdu minēšanas spēle with clue giver.",
-    "main_game": "wordle_lv",
-    "instances": "instances_withclue",
-    "players": 2,
-    "image": "none",
-    "languages": ["lv"],
-    "benchmark": ["2.0"],
-    "regression": "large",
-    "roles": ["Guesser", "Clue Giver"]
-  },
-  {
-    "game_name": "wordle_lv_withcritic",
-    "description": "Vārdulis 5-burtu vārdu minēšanas spēle with critic.",
-    "main_game": "wordle_lv",
-    "instances": "instances_withcritic",
-    "players": 2,
-    "image": "none",
-    "languages": ["lv"],
-    "benchmark": ["2.0"],
-    "regression": "large",
-    "roles": ["Guesser", "Clue Giver"]
   }
 ]
