@@ -7,252 +7,252 @@
             [
                 {
                     "game_id": 1,
-                    "target_word": "laikā",
+                    "target_word": "sobre",
                     "target_word_difficulty": "high_frequency"
                 },
                 {
                     "game_id": 2,
-                    "target_word": "darba",
+                    "target_word": "entre",
                     "target_word_difficulty": "high_frequency"
                 },
                 {
                     "game_id": 3,
-                    "target_word": "panta",
+                    "target_word": "desde",
                     "target_word_difficulty": "high_frequency"
                 },
                 {
                     "game_id": 4,
-                    "target_word": "pirms",
+                    "target_word": "parte",
                     "target_word_difficulty": "high_frequency"
                 },
                 {
                     "game_id": 5,
-                    "target_word": "daudz",
+                    "target_word": "hasta",
                     "target_word_difficulty": "high_frequency"
                 },
                 {
                     "game_id": 6,
-                    "target_word": "īpaši",
+                    "target_word": "mundo",
                     "target_word_difficulty": "high_frequency"
                 },
                 {
                     "game_id": 7,
-                    "target_word": "tomēr",
+                    "target_word": "hacer",
                     "target_word_difficulty": "high_frequency"
                 },
                 {
                     "game_id": 8,
-                    "target_word": "kuras",
+                    "target_word": "forma",
                     "target_word_difficulty": "high_frequency"
                 },
                 {
                     "game_id": 9,
-                    "target_word": "tāpēc",
+                    "target_word": "mejor",
                     "target_word_difficulty": "high_frequency"
                 },
                 {
                     "game_id": 10,
-                    "target_word": "laika",
+                    "target_word": "mismo",
                     "target_word_difficulty": "high_frequency"
                 },
                 {
                     "game_id": 11,
-                    "target_word": "starp",
+                    "target_word": "lugar",
                     "target_word_difficulty": "high_frequency"
                 },
                 {
                     "game_id": 12,
-                    "target_word": "viens",
+                    "target_word": "donde",
                     "target_word_difficulty": "high_frequency"
                 },
                 {
                     "game_id": 13,
-                    "target_word": "varat",
+                    "target_word": "ahora",
                     "target_word_difficulty": "high_frequency"
                 },
                 {
                     "game_id": 14,
-                    "target_word": "vietā",
+                    "target_word": "menos",
                     "target_word_difficulty": "high_frequency"
                 },
                 {
                     "game_id": 15,
-                    "target_word": "vienu",
+                    "target_word": "tanto",
                     "target_word_difficulty": "high_frequency"
                 },
                 {
                     "game_id": 16,
-                    "target_word": "rīgas",
+                    "target_word": "estos",
                     "target_word_difficulty": "high_frequency"
                 },
                 {
                     "game_id": 17,
-                    "target_word": "ņemot",
+                    "target_word": "nuevo",
                     "target_word_difficulty": "high_frequency"
                 },
                 {
                     "game_id": 18,
-                    "target_word": "visas",
+                    "target_word": "antes",
                     "target_word_difficulty": "high_frequency"
                 },
                 {
                     "game_id": 19,
-                    "target_word": "tieši",
+                    "target_word": "usted",
                     "target_word_difficulty": "high_frequency"
                 },
                 {
                     "game_id": 20,
-                    "target_word": "laiku",
+                    "target_word": "tener",
                     "target_word_difficulty": "high_frequency"
                 },
                 {
                     "game_id": 21,
-                    "target_word": "ūdens",
+                    "target_word": "mayor",
                     "target_word_difficulty": "high_frequency"
                 },
                 {
                     "game_id": 22,
-                    "target_word": "bērnu",
+                    "target_word": "mucho",
                     "target_word_difficulty": "high_frequency"
                 },
                 {
                     "game_id": 23,
-                    "target_word": "tagad",
+                    "target_word": "nueva",
                     "target_word_difficulty": "high_frequency"
                 },
                 {
                     "game_id": 24,
-                    "target_word": "darbu",
+                    "target_word": "ellos",
                     "target_word_difficulty": "high_frequency"
                 },
                 {
                     "game_id": 25,
-                    "target_word": "savas",
+                    "target_word": "hecho",
                     "target_word_difficulty": "high_frequency"
                 },
                 {
                     "game_id": 26,
-                    "target_word": "mājas",
+                    "target_word": "según",
                     "target_word_difficulty": "high_frequency"
                 },
                 {
                     "game_id": 27,
-                    "target_word": "vietu",
+                    "target_word": "grupo",
                     "target_word_difficulty": "high_frequency"
                 },
                 {
                     "game_id": 28,
-                    "target_word": "vieta",
+                    "target_word": "hotel",
                     "target_word_difficulty": "high_frequency"
                 },
                 {
                     "game_id": 29,
-                    "target_word": "veikt",
+                    "target_word": "medio",
                     "target_word_difficulty": "high_frequency"
                 },
                 {
                     "game_id": 30,
-                    "target_word": "katru",
+                    "target_word": "hacia",
                     "target_word_difficulty": "high_frequency"
                 },
                 {
                     "game_id": 31,
-                    "target_word": "dienā",
+                    "target_word": "estar",
                     "target_word_difficulty": "high_frequency"
                 },
                 {
                     "game_id": 32,
-                    "target_word": "jābūt",
+                    "target_word": "nivel",
                     "target_word_difficulty": "high_frequency"
                 },
                 {
                     "game_id": 33,
-                    "target_word": "dienu",
+                    "target_word": "decir",
                     "target_word_difficulty": "high_frequency"
                 },
                 {
                     "game_id": 34,
-                    "target_word": "tāpat",
+                    "target_word": "sitio",
                     "target_word_difficulty": "high_frequency"
                 },
                 {
                     "game_id": 35,
-                    "target_word": "bieži",
+                    "target_word": "poder",
                     "target_word_difficulty": "high_frequency"
                 },
                 {
                     "game_id": 36,
-                    "target_word": "pants",
+                    "target_word": "salud",
                     "target_word_difficulty": "high_frequency"
                 },
                 {
                     "game_id": 37,
-                    "target_word": "nevar",
+                    "target_word": "gente",
                     "target_word_difficulty": "high_frequency"
                 },
                 {
                     "game_id": 38,
-                    "target_word": "gaisa",
+                    "target_word": "nunca",
                     "target_word_difficulty": "high_frequency"
                 },
                 {
                     "game_id": 39,
-                    "target_word": "spēkā",
+                    "target_word": "demás",
                     "target_word_difficulty": "high_frequency"
                 },
                 {
                     "game_id": 40,
-                    "target_word": "laiks",
+                    "target_word": "punto",
                     "target_word_difficulty": "high_frequency"
                 },
                 {
                     "game_id": 41,
-                    "target_word": "cenas",
+                    "target_word": "línea",
                     "target_word_difficulty": "high_frequency"
                 },
                 {
                     "game_id": 42,
-                    "target_word": "veidā",
+                    "target_word": "cerca",
                     "target_word_difficulty": "high_frequency"
                 },
                 {
                     "game_id": 43,
-                    "target_word": "citas",
+                    "target_word": "ayuda",
                     "target_word_difficulty": "high_frequency"
                 },
                 {
                     "game_id": 44,
-                    "target_word": "tādēļ",
+                    "target_word": "final",
                     "target_word_difficulty": "high_frequency"
                 },
                 {
                     "game_id": 45,
-                    "target_word": "viņam",
+                    "target_word": "largo",
                     "target_word_difficulty": "high_frequency"
                 },
                 {
                     "game_id": 46,
-                    "target_word": "gadus",
+                    "target_word": "fuera",
                     "target_word_difficulty": "high_frequency"
                 },
                 {
                     "game_id": 47,
-                    "target_word": "pantu",
+                    "target_word": "mujer",
                     "target_word_difficulty": "high_frequency"
                 },
                 {
                     "game_id": 48,
-                    "target_word": "reizi",
+                    "target_word": "luego",
                     "target_word_difficulty": "high_frequency"
                 },
                 {
                     "game_id": 49,
-                    "target_word": "ziņas",
+                    "target_word": "juego",
                     "target_word_difficulty": "high_frequency"
                 },
                 {
                     "game_id": 50,
-                    "target_word": "datus",
+                    "target_word": "quien",
                     "target_word_difficulty": "high_frequency"
                 }
             ],
@@ -22761,252 +22761,252 @@
             [
                 {
                     "game_id": 1,
-                    "target_word": "būves",
+                    "target_word": "quino",
                     "target_word_difficulty": "medium_frequency"
                 },
                 {
                     "game_id": 2,
-                    "target_word": "laiki",
+                    "target_word": "pompa",
                     "target_word_difficulty": "medium_frequency"
                 },
                 {
                     "game_id": 3,
-                    "target_word": "sugām",
+                    "target_word": "colza",
                     "target_word_difficulty": "medium_frequency"
                 },
                 {
                     "game_id": 4,
-                    "target_word": "gaiši",
+                    "target_word": "argot",
                     "target_word_difficulty": "medium_frequency"
                 },
                 {
                     "game_id": 5,
-                    "target_word": "karšu",
+                    "target_word": "banal",
                     "target_word_difficulty": "medium_frequency"
                 },
                 {
                     "game_id": 6,
-                    "target_word": "tauki",
+                    "target_word": "tetra",
                     "target_word_difficulty": "medium_frequency"
                 },
                 {
                     "game_id": 7,
-                    "target_word": "tilta",
+                    "target_word": "falto",
                     "target_word_difficulty": "medium_frequency"
                 },
                 {
                     "game_id": 8,
-                    "target_word": "nākas",
+                    "target_word": "mella",
                     "target_word_difficulty": "medium_frequency"
                 },
                 {
                     "game_id": 9,
-                    "target_word": "sievu",
+                    "target_word": "toser",
                     "target_word_difficulty": "medium_frequency"
                 },
                 {
                     "game_id": 10,
-                    "target_word": "mācās",
+                    "target_word": "traba",
                     "target_word_difficulty": "medium_frequency"
                 },
                 {
                     "game_id": 11,
-                    "target_word": "vecās",
+                    "target_word": "álamo",
                     "target_word_difficulty": "medium_frequency"
                 },
                 {
                     "game_id": 12,
-                    "target_word": "disku",
+                    "target_word": "nipón",
                     "target_word_difficulty": "medium_frequency"
                 },
                 {
                     "game_id": 13,
-                    "target_word": "laivu",
+                    "target_word": "curie",
                     "target_word_difficulty": "medium_frequency"
                 },
                 {
                     "game_id": 14,
-                    "target_word": "prātu",
+                    "target_word": "encía",
                     "target_word_difficulty": "medium_frequency"
                 },
                 {
                     "game_id": 15,
-                    "target_word": "tādās",
+                    "target_word": "erizo",
                     "target_word_difficulty": "medium_frequency"
                 },
                 {
                     "game_id": 16,
-                    "target_word": "rindā",
+                    "target_word": "twist",
                     "target_word_difficulty": "medium_frequency"
                 },
                 {
                     "game_id": 17,
-                    "target_word": "radīs",
+                    "target_word": "dinar",
                     "target_word_difficulty": "medium_frequency"
                 },
                 {
                     "game_id": 18,
-                    "target_word": "saukt",
+                    "target_word": "linde",
                     "target_word_difficulty": "medium_frequency"
                 },
                 {
                     "game_id": 19,
-                    "target_word": "augļa",
+                    "target_word": "llaga",
                     "target_word_difficulty": "medium_frequency"
                 },
                 {
                     "game_id": 20,
-                    "target_word": "kalna",
+                    "target_word": "manso",
                     "target_word_difficulty": "medium_frequency"
                 },
                 {
                     "game_id": 21,
-                    "target_word": "brāļi",
+                    "target_word": "termo",
                     "target_word_difficulty": "medium_frequency"
                 },
                 {
                     "game_id": 22,
-                    "target_word": "vieni",
+                    "target_word": "prior",
                     "target_word_difficulty": "medium_frequency"
                 },
                 {
                     "game_id": 23,
-                    "target_word": "garša",
+                    "target_word": "matón",
                     "target_word_difficulty": "medium_frequency"
                 },
                 {
                     "game_id": 24,
-                    "target_word": "maina",
+                    "target_word": "acilo",
                     "target_word_difficulty": "medium_frequency"
                 },
                 {
                     "game_id": 25,
-                    "target_word": "tumši",
+                    "target_word": "chupa",
                     "target_word_difficulty": "medium_frequency"
                 },
                 {
                     "game_id": 26,
-                    "target_word": "pilda",
+                    "target_word": "tripa",
                     "target_word_difficulty": "medium_frequency"
                 },
                 {
                     "game_id": 27,
-                    "target_word": "cikls",
+                    "target_word": "zebra",
                     "target_word_difficulty": "medium_frequency"
                 },
                 {
                     "game_id": 28,
-                    "target_word": "cēsīs",
+                    "target_word": "abaco",
                     "target_word_difficulty": "medium_frequency"
                 },
                 {
                     "game_id": 29,
-                    "target_word": "ņemtu",
+                    "target_word": "azote",
                     "target_word_difficulty": "medium_frequency"
                 },
                 {
                     "game_id": 30,
-                    "target_word": "sanāk",
+                    "target_word": "pisco",
                     "target_word_difficulty": "medium_frequency"
                 },
                 {
                     "game_id": 31,
-                    "target_word": "klusā",
+                    "target_word": "radón",
                     "target_word_difficulty": "medium_frequency"
                 },
                 {
                     "game_id": 32,
-                    "target_word": "krēms",
+                    "target_word": "cesto",
                     "target_word_difficulty": "medium_frequency"
                 },
                 {
                     "game_id": 33,
-                    "target_word": "galva",
+                    "target_word": "plexo",
                     "target_word_difficulty": "medium_frequency"
                 },
                 {
                     "game_id": 34,
-                    "target_word": "ābolu",
+                    "target_word": "frita",
                     "target_word_difficulty": "medium_frequency"
                 },
                 {
                     "game_id": 35,
-                    "target_word": "kāpņu",
+                    "target_word": "ameno",
                     "target_word_difficulty": "medium_frequency"
                 },
                 {
                     "game_id": 36,
-                    "target_word": "tikās",
+                    "target_word": "cerda",
                     "target_word_difficulty": "medium_frequency"
                 },
                 {
                     "game_id": 37,
-                    "target_word": "šķita",
+                    "target_word": "mojar",
                     "target_word_difficulty": "medium_frequency"
                 },
                 {
                     "game_id": 38,
-                    "target_word": "uzsāk",
+                    "target_word": "vichy",
                     "target_word_difficulty": "medium_frequency"
                 },
                 {
                     "game_id": 39,
-                    "target_word": "likās",
+                    "target_word": "fuste",
                     "target_word_difficulty": "medium_frequency"
                 },
                 {
                     "game_id": 40,
-                    "target_word": "nekur",
+                    "target_word": "morse",
                     "target_word_difficulty": "medium_frequency"
                 },
                 {
                     "game_id": 41,
-                    "target_word": "zeķes",
+                    "target_word": "remar",
                     "target_word_difficulty": "medium_frequency"
                 },
                 {
                     "game_id": 42,
-                    "target_word": "mazie",
+                    "target_word": "combi",
                     "target_word_difficulty": "medium_frequency"
                 },
                 {
                     "game_id": 43,
-                    "target_word": "norma",
+                    "target_word": "baden",
                     "target_word_difficulty": "medium_frequency"
                 },
                 {
                     "game_id": 44,
-                    "target_word": "tēmām",
+                    "target_word": "sorbo",
                     "target_word_difficulty": "medium_frequency"
                 },
                 {
                     "game_id": 45,
-                    "target_word": "tavas",
+                    "target_word": "poyar",
                     "target_word_difficulty": "medium_frequency"
                 },
                 {
                     "game_id": 46,
-                    "target_word": "tilts",
+                    "target_word": "ciano",
                     "target_word_difficulty": "medium_frequency"
                 },
                 {
                     "game_id": 47,
-                    "target_word": "parku",
+                    "target_word": "gante",
                     "target_word_difficulty": "medium_frequency"
                 },
                 {
                     "game_id": 48,
-                    "target_word": "šādai",
+                    "target_word": "coñac",
                     "target_word_difficulty": "medium_frequency"
                 },
                 {
                     "game_id": 49,
-                    "target_word": "kases",
+                    "target_word": "magro",
                     "target_word_difficulty": "medium_frequency"
                 },
                 {
                     "game_id": 50,
-                    "target_word": "ezers",
+                    "target_word": "toner",
                     "target_word_difficulty": "medium_frequency"
                 }
             ],
@@ -45515,252 +45515,252 @@
             [
                 {
                     "game_id": 1,
-                    "target_word": "abeji",
+                    "target_word": "epico",
                     "target_word_difficulty": "low_frequency"
                 },
                 {
                     "game_id": 2,
-                    "target_word": "apols",
+                    "target_word": "croar",
                     "target_word_difficulty": "low_frequency"
                 },
                 {
                     "game_id": 3,
-                    "target_word": "jūkla",
+                    "target_word": "boson",
                     "target_word_difficulty": "low_frequency"
                 },
                 {
                     "game_id": 4,
-                    "target_word": "īksti",
+                    "target_word": "afijo",
                     "target_word_difficulty": "low_frequency"
                 },
                 {
                     "game_id": 5,
-                    "target_word": "čabis",
+                    "target_word": "manea",
                     "target_word_difficulty": "low_frequency"
                 },
                 {
                     "game_id": 6,
-                    "target_word": "sprēž",
+                    "target_word": "cafre",
                     "target_word_difficulty": "low_frequency"
                 },
                 {
                     "game_id": 7,
-                    "target_word": "ģieda",
+                    "target_word": "fabro",
                     "target_word_difficulty": "low_frequency"
                 },
                 {
                     "game_id": 8,
-                    "target_word": "gaizs",
+                    "target_word": "chala",
                     "target_word_difficulty": "low_frequency"
                 },
                 {
                     "game_id": 9,
-                    "target_word": "apķis",
+                    "target_word": "sarao",
                     "target_word_difficulty": "low_frequency"
                 },
                 {
                     "game_id": 10,
-                    "target_word": "ķozis",
+                    "target_word": "coqui",
                     "target_word_difficulty": "low_frequency"
                 },
                 {
                     "game_id": 11,
-                    "target_word": "ķosis",
+                    "target_word": "balín",
                     "target_word_difficulty": "low_frequency"
                 },
                 {
                     "game_id": 12,
-                    "target_word": "ģidrs",
+                    "target_word": "chamo",
                     "target_word_difficulty": "low_frequency"
                 },
                 {
                     "game_id": 13,
-                    "target_word": "ģeņģe",
+                    "target_word": "casis",
                     "target_word_difficulty": "low_frequency"
                 },
                 {
                     "game_id": 14,
-                    "target_word": "rīlis",
+                    "target_word": "estay",
                     "target_word_difficulty": "low_frequency"
                 },
                 {
                     "game_id": 15,
-                    "target_word": "čaiba",
+                    "target_word": "gozne",
                     "target_word_difficulty": "low_frequency"
                 },
                 {
                     "game_id": 16,
-                    "target_word": "durns",
+                    "target_word": "boira",
                     "target_word_difficulty": "low_frequency"
                 },
                 {
                     "game_id": 17,
-                    "target_word": "čalus",
+                    "target_word": "yedra",
                     "target_word_difficulty": "low_frequency"
                 },
                 {
                     "game_id": 18,
-                    "target_word": "zutne",
+                    "target_word": "egida",
                     "target_word_difficulty": "low_frequency"
                 },
                 {
                     "game_id": 19,
-                    "target_word": "aduta",
+                    "target_word": "bicos",
                     "target_word_difficulty": "low_frequency"
                 },
                 {
                     "game_id": 20,
-                    "target_word": "roida",
+                    "target_word": "toril",
                     "target_word_difficulty": "low_frequency"
                 },
                 {
                     "game_id": 21,
-                    "target_word": "koļļa",
+                    "target_word": "balar",
                     "target_word_difficulty": "low_frequency"
                 },
                 {
                     "game_id": 22,
-                    "target_word": "zeija",
+                    "target_word": "chane",
                     "target_word_difficulty": "low_frequency"
                 },
                 {
                     "game_id": 23,
-                    "target_word": "graba",
+                    "target_word": "choto",
                     "target_word_difficulty": "low_frequency"
                 },
                 {
                     "game_id": 24,
-                    "target_word": "apars",
+                    "target_word": "cacto",
                     "target_word_difficulty": "low_frequency"
                 },
                 {
                     "game_id": 25,
-                    "target_word": "garga",
+                    "target_word": "folia",
                     "target_word_difficulty": "low_frequency"
                 },
                 {
                     "game_id": 26,
-                    "target_word": "zārds",
+                    "target_word": "cofin",
                     "target_word_difficulty": "low_frequency"
                 },
                 {
                     "game_id": 27,
-                    "target_word": "ģeida",
+                    "target_word": "zurra",
                     "target_word_difficulty": "low_frequency"
                 },
                 {
                     "game_id": 28,
-                    "target_word": "ķipis",
+                    "target_word": "zoilo",
                     "target_word_difficulty": "low_frequency"
                 },
                 {
                     "game_id": 29,
-                    "target_word": "buļba",
+                    "target_word": "tunda",
                     "target_word_difficulty": "low_frequency"
                 },
                 {
                     "game_id": 30,
-                    "target_word": "kauka",
+                    "target_word": "henar",
                     "target_word_difficulty": "low_frequency"
                 },
                 {
                     "game_id": 31,
-                    "target_word": "ķērne",
+                    "target_word": "dahir",
                     "target_word_difficulty": "low_frequency"
                 },
                 {
                     "game_id": 32,
-                    "target_word": "driķi",
+                    "target_word": "chist",
                     "target_word_difficulty": "low_frequency"
                 },
                 {
                     "game_id": 33,
-                    "target_word": "gaurs",
+                    "target_word": "atora",
                     "target_word_difficulty": "low_frequency"
                 },
                 {
                     "game_id": 34,
-                    "target_word": "mulda",
+                    "target_word": "haiga",
                     "target_word_difficulty": "low_frequency"
                 },
                 {
                     "game_id": 35,
-                    "target_word": "grods",
+                    "target_word": "mudez",
                     "target_word_difficulty": "low_frequency"
                 },
                 {
                     "game_id": 36,
-                    "target_word": "kaive",
+                    "target_word": "proel",
                     "target_word_difficulty": "low_frequency"
                 },
                 {
                     "game_id": 37,
-                    "target_word": "sābri",
+                    "target_word": "beron",
                     "target_word_difficulty": "low_frequency"
                 },
                 {
                     "game_id": 38,
-                    "target_word": "mārša",
+                    "target_word": "popes",
                     "target_word_difficulty": "low_frequency"
                 },
                 {
                     "game_id": 39,
-                    "target_word": "ķocis",
+                    "target_word": "balto",
                     "target_word_difficulty": "low_frequency"
                 },
                 {
                     "game_id": 40,
-                    "target_word": "ķīris",
+                    "target_word": "cappa",
                     "target_word_difficulty": "low_frequency"
                 },
                 {
                     "game_id": 41,
-                    "target_word": "dūcis",
+                    "target_word": "pansa",
                     "target_word_difficulty": "low_frequency"
                 },
                 {
                     "game_id": 42,
-                    "target_word": "ganga",
+                    "target_word": "safir",
                     "target_word_difficulty": "low_frequency"
                 },
                 {
                     "game_id": 43,
-                    "target_word": "apals",
+                    "target_word": "licio",
                     "target_word_difficulty": "low_frequency"
                 },
                 {
                     "game_id": 44,
-                    "target_word": "kaiva",
+                    "target_word": "robla",
                     "target_word_difficulty": "low_frequency"
                 },
                 {
                     "game_id": 45,
-                    "target_word": "aplam",
+                    "target_word": "melva",
                     "target_word_difficulty": "low_frequency"
                 },
                 {
                     "game_id": 46,
-                    "target_word": "lanka",
+                    "target_word": "ralea",
                     "target_word_difficulty": "low_frequency"
                 },
                 {
                     "game_id": 47,
-                    "target_word": "rasas",
+                    "target_word": "buzon",
                     "target_word_difficulty": "low_frequency"
                 },
                 {
                     "game_id": 48,
-                    "target_word": "alkas",
+                    "target_word": "vison",
                     "target_word_difficulty": "low_frequency"
                 },
                 {
                     "game_id": 49,
-                    "target_word": "pūtīs",
+                    "target_word": "motin",
                     "target_word_difficulty": "low_frequency"
                 },
                 {
                     "game_id": 50,
-                    "target_word": "krēmi",
+                    "target_word": "picon",
                     "target_word_difficulty": "low_frequency"
                 }
             ],

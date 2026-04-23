@@ -17,12 +17,12 @@
                 },
                 {
                     "game_id": 3,
-                    "target_word": "けんきゅう",
+                    "target_word": "あたらしい",
                     "target_word_difficulty": "high_frequency"
                 },
                 {
                     "game_id": 4,
-                    "target_word": "あたらしい",
+                    "target_word": "けんきゅう",
                     "target_word_difficulty": "high_frequency"
                 },
                 {
@@ -42,32 +42,32 @@
                 },
                 {
                     "game_id": 8,
-                    "target_word": "いすらえる",
-                    "target_word_difficulty": "high_frequency"
-                },
-                {
-                    "game_id": 9,
                     "target_word": "じゅうよう",
                     "target_word_difficulty": "high_frequency"
                 },
                 {
-                    "game_id": 10,
+                    "game_id": 9,
                     "target_word": "さんしょう",
                     "target_word_difficulty": "high_frequency"
                 },
                 {
-                    "game_id": 11,
-                    "target_word": "おぷしょん",
+                    "game_id": 10,
+                    "target_word": "かんぱにー",
                     "target_word_difficulty": "high_frequency"
                 },
                 {
-                    "game_id": 12,
+                    "game_id": 11,
                     "target_word": "えいきょう",
                     "target_word_difficulty": "high_frequency"
                 },
                 {
+                    "game_id": 12,
+                    "target_word": "おぷしょん",
+                    "target_word_difficulty": "high_frequency"
+                },
+                {
                     "game_id": 13,
-                    "target_word": "きげんぜん",
+                    "target_word": "こうにゅう",
                     "target_word_difficulty": "high_frequency"
                 },
                 {
@@ -77,7 +77,7 @@
                 },
                 {
                     "game_id": 15,
-                    "target_word": "かくちょう",
+                    "target_word": "じょうたい",
                     "target_word_difficulty": "high_frequency"
                 },
                 {
@@ -87,172 +87,172 @@
                 },
                 {
                     "game_id": 17,
-                    "target_word": "こうにゅう",
-                    "target_word_difficulty": "high_frequency"
-                },
-                {
-                    "game_id": 18,
-                    "target_word": "じょうたい",
-                    "target_word_difficulty": "high_frequency"
-                },
-                {
-                    "game_id": 19,
-                    "target_word": "だいひょう",
-                    "target_word_difficulty": "high_frequency"
-                },
-                {
-                    "game_id": 20,
-                    "target_word": "つうじょう",
-                    "target_word_difficulty": "high_frequency"
-                },
-                {
-                    "game_id": 21,
-                    "target_word": "きょういく",
-                    "target_word_difficulty": "high_frequency"
-                },
-                {
-                    "game_id": 22,
-                    "target_word": "めっせーじ",
-                    "target_word_difficulty": "high_frequency"
-                },
-                {
-                    "game_id": 23,
-                    "target_word": "しょうひん",
-                    "target_word_difficulty": "high_frequency"
-                },
-                {
-                    "game_id": 24,
-                    "target_word": "ちゅうしん",
-                    "target_word_difficulty": "high_frequency"
-                },
-                {
-                    "game_id": 25,
-                    "target_word": "きょうゆう",
-                    "target_word_difficulty": "high_frequency"
-                },
-                {
-                    "game_id": 26,
-                    "target_word": "たいしょう",
-                    "target_word_difficulty": "high_frequency"
-                },
-                {
-                    "game_id": 27,
-                    "target_word": "じょうけん",
-                    "target_word_difficulty": "high_frequency"
-                },
-                {
-                    "game_id": 28,
-                    "target_word": "しょうかい",
-                    "target_word_difficulty": "high_frequency"
-                },
-                {
-                    "game_id": 29,
-                    "target_word": "こうじょう",
-                    "target_word_difficulty": "high_frequency"
-                },
-                {
-                    "game_id": 30,
                     "target_word": "はっぴょう",
                     "target_word_difficulty": "high_frequency"
                 },
                 {
-                    "game_id": 31,
-                    "target_word": "といあわせ",
+                    "game_id": 18,
+                    "target_word": "めっせーじ",
                     "target_word_difficulty": "high_frequency"
                 },
                 {
-                    "game_id": 32,
+                    "game_id": 19,
+                    "target_word": "かのうせい",
+                    "target_word_difficulty": "high_frequency"
+                },
+                {
+                    "game_id": 20,
+                    "target_word": "しょうひん",
+                    "target_word_difficulty": "high_frequency"
+                },
+                {
+                    "game_id": 21,
+                    "target_word": "しょうかい",
+                    "target_word_difficulty": "high_frequency"
+                },
+                {
+                    "game_id": 22,
+                    "target_word": "きょういく",
+                    "target_word_difficulty": "high_frequency"
+                },
+                {
+                    "game_id": 23,
+                    "target_word": "つうじょう",
+                    "target_word_difficulty": "high_frequency"
+                },
+                {
+                    "game_id": 24,
+                    "target_word": "じょうけん",
+                    "target_word_difficulty": "high_frequency"
+                },
+                {
+                    "game_id": 25,
+                    "target_word": "たいしょう",
+                    "target_word_difficulty": "high_frequency"
+                },
+                {
+                    "game_id": 26,
+                    "target_word": "きょうゆう",
+                    "target_word_difficulty": "high_frequency"
+                },
+                {
+                    "game_id": 27,
+                    "target_word": "かくちょう",
+                    "target_word_difficulty": "high_frequency"
+                },
+                {
+                    "game_id": 28,
                     "target_word": "せいちょう",
                     "target_word_difficulty": "high_frequency"
                 },
                 {
-                    "game_id": 33,
-                    "target_word": "にんしょう",
-                    "target_word_difficulty": "high_frequency"
-                },
-                {
-                    "game_id": 34,
+                    "game_id": 29,
                     "target_word": "えねるぎー",
                     "target_word_difficulty": "high_frequency"
                 },
                 {
-                    "game_id": 35,
-                    "target_word": "ざいりょう",
+                    "game_id": 30,
+                    "target_word": "ちゅうしん",
                     "target_word_difficulty": "high_frequency"
                 },
                 {
-                    "game_id": 36,
+                    "game_id": 31,
+                    "target_word": "だいひょう",
+                    "target_word_difficulty": "high_frequency"
+                },
+                {
+                    "game_id": 32,
+                    "target_word": "きげんぜん",
+                    "target_word_difficulty": "high_frequency"
+                },
+                {
+                    "game_id": 33,
                     "target_word": "ちょくせつ",
                     "target_word_difficulty": "high_frequency"
                 },
                 {
+                    "game_id": 34,
+                    "target_word": "おんらいん",
+                    "target_word_difficulty": "high_frequency"
+                },
+                {
+                    "game_id": 35,
+                    "target_word": "にんしょう",
+                    "target_word_difficulty": "high_frequency"
+                },
+                {
+                    "game_id": 36,
+                    "target_word": "もくひょう",
+                    "target_word_difficulty": "high_frequency"
+                },
+                {
                     "game_id": 37,
-                    "target_word": "ふぃーるど",
+                    "target_word": "こうじょう",
                     "target_word_difficulty": "high_frequency"
                 },
                 {
                     "game_id": 38,
-                    "target_word": "さんぎょう",
-                    "target_word_difficulty": "high_frequency"
-                },
-                {
-                    "game_id": 39,
-                    "target_word": "しゅうせい",
-                    "target_word_difficulty": "high_frequency"
-                },
-                {
-                    "game_id": 40,
-                    "target_word": "ぐろーばる",
-                    "target_word_difficulty": "high_frequency"
-                },
-                {
-                    "game_id": 41,
-                    "target_word": "とくちょう",
-                    "target_word_difficulty": "high_frequency"
-                },
-                {
-                    "game_id": 42,
-                    "target_word": "ぱすわーど",
-                    "target_word_difficulty": "high_frequency"
-                },
-                {
-                    "game_id": 43,
-                    "target_word": "ぱっけーじ",
-                    "target_word_difficulty": "high_frequency"
-                },
-                {
-                    "game_id": 44,
-                    "target_word": "ちょうせい",
-                    "target_word_difficulty": "high_frequency"
-                },
-                {
-                    "game_id": 45,
-                    "target_word": "かんりょう",
-                    "target_word_difficulty": "high_frequency"
-                },
-                {
-                    "game_id": 46,
-                    "target_word": "ようきゅう",
-                    "target_word_difficulty": "high_frequency"
-                },
-                {
-                    "game_id": 47,
                     "target_word": "じゅうぶん",
                     "target_word_difficulty": "high_frequency"
                 },
                 {
-                    "game_id": 48,
+                    "game_id": 39,
+                    "target_word": "すばらしい",
+                    "target_word_difficulty": "high_frequency"
+                },
+                {
+                    "game_id": 40,
+                    "target_word": "ようきゅう",
+                    "target_word_difficulty": "high_frequency"
+                },
+                {
+                    "game_id": 41,
+                    "target_word": "のうりょく",
+                    "target_word_difficulty": "high_frequency"
+                },
+                {
+                    "game_id": 42,
+                    "target_word": "さいしゅう",
+                    "target_word_difficulty": "high_frequency"
+                },
+                {
+                    "game_id": 43,
+                    "target_word": "しゅうせい",
+                    "target_word_difficulty": "high_frequency"
+                },
+                {
+                    "game_id": 44,
                     "target_word": "りょうきん",
                     "target_word_difficulty": "high_frequency"
                 },
                 {
+                    "game_id": 45,
+                    "target_word": "さんぎょう",
+                    "target_word_difficulty": "high_frequency"
+                },
+                {
+                    "game_id": 46,
+                    "target_word": "よーろっぱ",
+                    "target_word_difficulty": "high_frequency"
+                },
+                {
+                    "game_id": 47,
+                    "target_word": "ありがとう",
+                    "target_word_difficulty": "high_frequency"
+                },
+                {
+                    "game_id": 48,
+                    "target_word": "ふぃーるど",
+                    "target_word_difficulty": "high_frequency"
+                },
+                {
                     "game_id": 49,
-                    "target_word": "りょういき",
+                    "target_word": "といあわせ",
                     "target_word_difficulty": "high_frequency"
                 },
                 {
                     "game_id": 50,
-                    "target_word": "どうにゅう",
+                    "target_word": "とくちょう",
                     "target_word_difficulty": "high_frequency"
                 }
             ],
@@ -87505,252 +87505,252 @@
             [
                 {
                     "game_id": 1,
-                    "target_word": "ひんぴょう",
+                    "target_word": "はなしごえ",
                     "target_word_difficulty": "medium_frequency"
                 },
                 {
                     "game_id": 2,
-                    "target_word": "いちじてき",
+                    "target_word": "たんしょう",
                     "target_word_difficulty": "medium_frequency"
                 },
                 {
                     "game_id": 3,
-                    "target_word": "こくびゃく",
+                    "target_word": "きょじょう",
                     "target_word_difficulty": "medium_frequency"
                 },
                 {
                     "game_id": 4,
-                    "target_word": "てーぴんぐ",
+                    "target_word": "かきことば",
                     "target_word_difficulty": "medium_frequency"
                 },
                 {
                     "game_id": 5,
-                    "target_word": "おどろかす",
+                    "target_word": "ないしょく",
                     "target_word_difficulty": "medium_frequency"
                 },
                 {
                     "game_id": 6,
-                    "target_word": "かみかたち",
+                    "target_word": "ふえいせい",
                     "target_word_difficulty": "medium_frequency"
                 },
                 {
                     "game_id": 7,
-                    "target_word": "こうかおん",
+                    "target_word": "どうきょく",
                     "target_word_difficulty": "medium_frequency"
                 },
                 {
                     "game_id": 8,
-                    "target_word": "ちぇあまん",
+                    "target_word": "りーぐせん",
                     "target_word_difficulty": "medium_frequency"
                 },
                 {
                     "game_id": 9,
-                    "target_word": "なにひとつ",
+                    "target_word": "やまのかみ",
                     "target_word_difficulty": "medium_frequency"
                 },
                 {
                     "game_id": 10,
-                    "target_word": "はねかえる",
+                    "target_word": "きょじゃく",
                     "target_word_difficulty": "medium_frequency"
                 },
                 {
                     "game_id": 11,
-                    "target_word": "みくるしい",
+                    "target_word": "じぼうじき",
                     "target_word_difficulty": "medium_frequency"
                 },
                 {
                     "game_id": 12,
-                    "target_word": "かみかくし",
+                    "target_word": "しぇーばー",
                     "target_word_difficulty": "medium_frequency"
                 },
                 {
                     "game_id": 13,
-                    "target_word": "ぎゃくさん",
+                    "target_word": "そくりょく",
                     "target_word_difficulty": "medium_frequency"
                 },
                 {
                     "game_id": 14,
-                    "target_word": "ぷらかーど",
+                    "target_word": "れとりっく",
                     "target_word_difficulty": "medium_frequency"
                 },
                 {
                     "game_id": 15,
-                    "target_word": "まきかえし",
+                    "target_word": "もどかしい",
                     "target_word_difficulty": "medium_frequency"
                 },
                 {
                     "game_id": 16,
-                    "target_word": "ざいりょく",
+                    "target_word": "こころいき",
                     "target_word_difficulty": "medium_frequency"
                 },
                 {
                     "game_id": 17,
-                    "target_word": "そうしんぐ",
+                    "target_word": "きょりゅう",
                     "target_word_difficulty": "medium_frequency"
                 },
                 {
                     "game_id": 18,
-                    "target_word": "かきのこし",
+                    "target_word": "とりはらう",
                     "target_word_difficulty": "medium_frequency"
                 },
                 {
                     "game_id": 19,
-                    "target_word": "かくのうこ",
-                    "target_word_difficulty": "medium_frequency"
-                },
-                {
-                    "game_id": 20,
-                    "target_word": "まもりかみ",
-                    "target_word_difficulty": "medium_frequency"
-                },
-                {
-                    "game_id": 21,
-                    "target_word": "おいつめる",
-                    "target_word_difficulty": "medium_frequency"
-                },
-                {
-                    "game_id": 22,
-                    "target_word": "まてんろう",
-                    "target_word_difficulty": "medium_frequency"
-                },
-                {
-                    "game_id": 23,
-                    "target_word": "げしゅたぽ",
-                    "target_word_difficulty": "medium_frequency"
-                },
-                {
-                    "game_id": 24,
-                    "target_word": "しゅんぎく",
-                    "target_word_difficulty": "medium_frequency"
-                },
-                {
-                    "game_id": 25,
-                    "target_word": "すれちがい",
-                    "target_word_difficulty": "medium_frequency"
-                },
-                {
-                    "game_id": 26,
-                    "target_word": "ていきてき",
-                    "target_word_difficulty": "medium_frequency"
-                },
-                {
-                    "game_id": 27,
-                    "target_word": "ひごうほう",
-                    "target_word_difficulty": "medium_frequency"
-                },
-                {
-                    "game_id": 28,
-                    "target_word": "よびもどす",
-                    "target_word_difficulty": "medium_frequency"
-                },
-                {
-                    "game_id": 29,
-                    "target_word": "こうねつひ",
-                    "target_word_difficulty": "medium_frequency"
-                },
-                {
-                    "game_id": 30,
-                    "target_word": "やきあげる",
-                    "target_word_difficulty": "medium_frequency"
-                },
-                {
-                    "game_id": 31,
-                    "target_word": "どうきょう",
-                    "target_word_difficulty": "medium_frequency"
-                },
-                {
-                    "game_id": 32,
-                    "target_word": "ふへんせい",
-                    "target_word_difficulty": "medium_frequency"
-                },
-                {
-                    "game_id": 33,
-                    "target_word": "しゅうぶん",
-                    "target_word_difficulty": "medium_frequency"
-                },
-                {
-                    "game_id": 34,
-                    "target_word": "もえあがる",
-                    "target_word_difficulty": "medium_frequency"
-                },
-                {
-                    "game_id": 35,
-                    "target_word": "かなわない",
-                    "target_word_difficulty": "medium_frequency"
-                },
-                {
-                    "game_id": 36,
-                    "target_word": "ふんけいか",
-                    "target_word_difficulty": "medium_frequency"
-                },
-                {
-                    "game_id": 37,
-                    "target_word": "みつともえ",
-                    "target_word_difficulty": "medium_frequency"
-                },
-                {
-                    "game_id": 38,
-                    "target_word": "つかいもの",
-                    "target_word_difficulty": "medium_frequency"
-                },
-                {
-                    "game_id": 39,
-                    "target_word": "しゅつごく",
-                    "target_word_difficulty": "medium_frequency"
-                },
-                {
-                    "game_id": 40,
-                    "target_word": "ひっかかる",
-                    "target_word_difficulty": "medium_frequency"
-                },
-                {
-                    "game_id": 41,
-                    "target_word": "かぞえどし",
-                    "target_word_difficulty": "medium_frequency"
-                },
-                {
-                    "game_id": 42,
-                    "target_word": "なかまいり",
-                    "target_word_difficulty": "medium_frequency"
-                },
-                {
-                    "game_id": 43,
-                    "target_word": "かんきゅう",
-                    "target_word_difficulty": "medium_frequency"
-                },
-                {
-                    "game_id": 44,
                     "target_word": "もえつきる",
                     "target_word_difficulty": "medium_frequency"
                 },
                 {
+                    "game_id": 20,
+                    "target_word": "やおよろず",
+                    "target_word_difficulty": "medium_frequency"
+                },
+                {
+                    "game_id": 21,
+                    "target_word": "かたるしす",
+                    "target_word_difficulty": "medium_frequency"
+                },
+                {
+                    "game_id": 22,
+                    "target_word": "たなおろし",
+                    "target_word_difficulty": "medium_frequency"
+                },
+                {
+                    "game_id": 23,
+                    "target_word": "おいつめる",
+                    "target_word_difficulty": "medium_frequency"
+                },
+                {
+                    "game_id": 24,
+                    "target_word": "じゅんぷう",
+                    "target_word_difficulty": "medium_frequency"
+                },
+                {
+                    "game_id": 25,
+                    "target_word": "みすとらる",
+                    "target_word_difficulty": "medium_frequency"
+                },
+                {
+                    "game_id": 26,
+                    "target_word": "かいみょう",
+                    "target_word_difficulty": "medium_frequency"
+                },
+                {
+                    "game_id": 27,
+                    "target_word": "じょうがい",
+                    "target_word_difficulty": "medium_frequency"
+                },
+                {
+                    "game_id": 28,
+                    "target_word": "こなみるく",
+                    "target_word_difficulty": "medium_frequency"
+                },
+                {
+                    "game_id": 29,
+                    "target_word": "しょぎょう",
+                    "target_word_difficulty": "medium_frequency"
+                },
+                {
+                    "game_id": 30,
+                    "target_word": "まんどりん",
+                    "target_word_difficulty": "medium_frequency"
+                },
+                {
+                    "game_id": 31,
+                    "target_word": "ひていてき",
+                    "target_word_difficulty": "medium_frequency"
+                },
+                {
+                    "game_id": 32,
+                    "target_word": "いちじゅん",
+                    "target_word_difficulty": "medium_frequency"
+                },
+                {
+                    "game_id": 33,
+                    "target_word": "おどろかす",
+                    "target_word_difficulty": "medium_frequency"
+                },
+                {
+                    "game_id": 34,
+                    "target_word": "わかがえる",
+                    "target_word_difficulty": "medium_frequency"
+                },
+                {
+                    "game_id": 35,
+                    "target_word": "たすけあい",
+                    "target_word_difficulty": "medium_frequency"
+                },
+                {
+                    "game_id": 36,
+                    "target_word": "えんてんか",
+                    "target_word_difficulty": "medium_frequency"
+                },
+                {
+                    "game_id": 37,
+                    "target_word": "わんだふる",
+                    "target_word_difficulty": "medium_frequency"
+                },
+                {
+                    "game_id": 38,
+                    "target_word": "おちこぼれ",
+                    "target_word_difficulty": "medium_frequency"
+                },
+                {
+                    "game_id": 39,
+                    "target_word": "ためんたい",
+                    "target_word_difficulty": "medium_frequency"
+                },
+                {
+                    "game_id": 40,
+                    "target_word": "さぶまりん",
+                    "target_word_difficulty": "medium_frequency"
+                },
+                {
+                    "game_id": 41,
+                    "target_word": "まなむすめ",
+                    "target_word_difficulty": "medium_frequency"
+                },
+                {
+                    "game_id": 42,
+                    "target_word": "うまれたて",
+                    "target_word_difficulty": "medium_frequency"
+                },
+                {
+                    "game_id": 43,
+                    "target_word": "おもてかわ",
+                    "target_word_difficulty": "medium_frequency"
+                },
+                {
+                    "game_id": 44,
+                    "target_word": "せんきょう",
+                    "target_word_difficulty": "medium_frequency"
+                },
+                {
                     "game_id": 45,
-                    "target_word": "せんてんす",
+                    "target_word": "とうりょう",
                     "target_word_difficulty": "medium_frequency"
                 },
                 {
                     "game_id": 46,
-                    "target_word": "まとはずれ",
+                    "target_word": "なっしんぐ",
                     "target_word_difficulty": "medium_frequency"
                 },
                 {
                     "game_id": 47,
-                    "target_word": "あいきょう",
+                    "target_word": "せいしゅく",
                     "target_word_difficulty": "medium_frequency"
                 },
                 {
                     "game_id": 48,
-                    "target_word": "みぎまわり",
+                    "target_word": "えきさいと",
                     "target_word_difficulty": "medium_frequency"
                 },
                 {
                     "game_id": 49,
-                    "target_word": "にしあじあ",
+                    "target_word": "あるまいと",
                     "target_word_difficulty": "medium_frequency"
                 },
                 {
                     "game_id": 50,
-                    "target_word": "もちあるき",
+                    "target_word": "みとどける",
                     "target_word_difficulty": "medium_frequency"
                 }
             ],
@@ -175003,252 +175003,252 @@
             [
                 {
                     "game_id": 1,
-                    "target_word": "えもんかけ",
+                    "target_word": "くものみね",
                     "target_word_difficulty": "low_frequency"
                 },
                 {
                     "game_id": 2,
-                    "target_word": "おおむこう",
+                    "target_word": "こうひよう",
                     "target_word_difficulty": "low_frequency"
                 },
                 {
                     "game_id": 3,
-                    "target_word": "おもてあみ",
+                    "target_word": "ことのほか",
                     "target_word_difficulty": "low_frequency"
                 },
                 {
                     "game_id": 4,
-                    "target_word": "おもてさく",
+                    "target_word": "すまししる",
                     "target_word_difficulty": "low_frequency"
                 },
                 {
                     "game_id": 5,
-                    "target_word": "かえりかけ",
+                    "target_word": "せきしよう",
                     "target_word_difficulty": "low_frequency"
                 },
                 {
                     "game_id": 6,
-                    "target_word": "かなたらい",
+                    "target_word": "そらたのみ",
                     "target_word_difficulty": "low_frequency"
                 },
                 {
                     "game_id": 7,
-                    "target_word": "かりあげる",
+                    "target_word": "ねこくるま",
                     "target_word_difficulty": "low_frequency"
                 },
                 {
                     "game_id": 8,
-                    "target_word": "きひんせき",
+                    "target_word": "はさつおん",
                     "target_word_difficulty": "low_frequency"
                 },
                 {
                     "game_id": 9,
-                    "target_word": "きんこうか",
+                    "target_word": "ふていさい",
                     "target_word_difficulty": "low_frequency"
                 },
                 {
                     "game_id": 10,
-                    "target_word": "こうしやく",
+                    "target_word": "ほしあかり",
                     "target_word_difficulty": "low_frequency"
                 },
                 {
                     "game_id": 11,
-                    "target_word": "こうふこう",
+                    "target_word": "みあやまり",
                     "target_word_difficulty": "low_frequency"
                 },
                 {
                     "game_id": 12,
-                    "target_word": "さとこころ",
+                    "target_word": "よりあわせ",
                     "target_word_difficulty": "low_frequency"
                 },
                 {
                     "game_id": 13,
-                    "target_word": "さんしゅう",
+                    "target_word": "ろそくたい",
                     "target_word_difficulty": "low_frequency"
                 },
                 {
                     "game_id": 14,
-                    "target_word": "しゆんとう",
+                    "target_word": "われこそは",
                     "target_word_difficulty": "low_frequency"
                 },
                 {
                     "game_id": 15,
-                    "target_word": "しようすう",
+                    "target_word": "おぼえこむ",
                     "target_word_difficulty": "low_frequency"
                 },
                 {
                     "game_id": 16,
-                    "target_word": "しようない",
+                    "target_word": "ぐたいさく",
                     "target_word_difficulty": "low_frequency"
                 },
                 {
                     "game_id": 17,
-                    "target_word": "しようふん",
+                    "target_word": "おしぼたん",
                     "target_word_difficulty": "low_frequency"
                 },
                 {
                     "game_id": 18,
-                    "target_word": "しんほとけ",
+                    "target_word": "いいきもち",
                     "target_word_difficulty": "low_frequency"
                 },
                 {
                     "game_id": 19,
-                    "target_word": "せつかんけ",
+                    "target_word": "うすくらい",
                     "target_word_difficulty": "low_frequency"
                 },
                 {
                     "game_id": 20,
-                    "target_word": "そらわらい",
+                    "target_word": "えんやこら",
                     "target_word_difficulty": "low_frequency"
                 },
                 {
                     "game_id": 21,
-                    "target_word": "たいこもち",
+                    "target_word": "かいきえん",
                     "target_word_difficulty": "low_frequency"
                 },
                 {
                     "game_id": 22,
-                    "target_word": "ちせいたい",
+                    "target_word": "かへいかち",
                     "target_word_difficulty": "low_frequency"
                 },
                 {
                     "game_id": 23,
-                    "target_word": "ちゅうしつ",
+                    "target_word": "さくらにく",
                     "target_word_difficulty": "low_frequency"
                 },
                 {
                     "game_id": 24,
-                    "target_word": "つうちよう",
+                    "target_word": "しせいしき",
                     "target_word_difficulty": "low_frequency"
                 },
                 {
                     "game_id": 25,
-                    "target_word": "ていのよい",
+                    "target_word": "しゆうみつ",
                     "target_word_difficulty": "low_frequency"
                 },
                 {
                     "game_id": 26,
-                    "target_word": "てんとうき",
+                    "target_word": "しんきたい",
                     "target_word_difficulty": "low_frequency"
                 },
                 {
                     "game_id": 27,
-                    "target_word": "とうしこく",
+                    "target_word": "すいいりつ",
                     "target_word_difficulty": "low_frequency"
                 },
                 {
                     "game_id": 28,
-                    "target_word": "なにをいう",
+                    "target_word": "せいおうか",
                     "target_word_difficulty": "low_frequency"
                 },
                 {
                     "game_id": 29,
-                    "target_word": "なみなみと",
+                    "target_word": "ひとたまり",
                     "target_word_difficulty": "low_frequency"
                 },
                 {
                     "game_id": 30,
-                    "target_word": "なんまいた",
+                    "target_word": "ひとはらい",
                     "target_word_difficulty": "low_frequency"
                 },
                 {
                     "game_id": 31,
-                    "target_word": "ぬすみよみ",
+                    "target_word": "ゆかいはん",
                     "target_word_difficulty": "low_frequency"
                 },
                 {
                     "game_id": 32,
-                    "target_word": "ねたましい",
+                    "target_word": "らくてんち",
                     "target_word_difficulty": "low_frequency"
                 },
                 {
                     "game_id": 33,
-                    "target_word": "ねばっこい",
+                    "target_word": "にちあたり",
                     "target_word_difficulty": "low_frequency"
                 },
                 {
                     "game_id": 34,
-                    "target_word": "のうかんき",
+                    "target_word": "おくりがな",
                     "target_word_difficulty": "low_frequency"
                 },
                 {
                     "game_id": 35,
-                    "target_word": "はくとうゆ",
+                    "target_word": "おきなかし",
                     "target_word_difficulty": "low_frequency"
                 },
                 {
                     "game_id": 36,
-                    "target_word": "はこしよう",
+                    "target_word": "かくしたま",
                     "target_word_difficulty": "low_frequency"
                 },
                 {
                     "game_id": 37,
-                    "target_word": "ひとなぬか",
+                    "target_word": "かなものや",
                     "target_word_difficulty": "low_frequency"
                 },
                 {
                     "game_id": 38,
-                    "target_word": "ひまんたい",
+                    "target_word": "くりあわせ",
                     "target_word_difficulty": "low_frequency"
                 },
                 {
                     "game_id": 39,
-                    "target_word": "ひようせつ",
+                    "target_word": "けつくろい",
                     "target_word_difficulty": "low_frequency"
                 },
                 {
                     "game_id": 40,
-                    "target_word": "ふうふなか",
+                    "target_word": "こうたんえ",
                     "target_word_difficulty": "low_frequency"
                 },
                 {
                     "game_id": 41,
-                    "target_word": "ふけいかい",
+                    "target_word": "こていてき",
                     "target_word_difficulty": "low_frequency"
                 },
                 {
                     "game_id": 42,
-                    "target_word": "ふけいさい",
+                    "target_word": "せんたくや",
                     "target_word_difficulty": "low_frequency"
                 },
                 {
                     "game_id": 43,
-                    "target_word": "ふまんかお",
+                    "target_word": "にんしよう",
                     "target_word_difficulty": "low_frequency"
                 },
                 {
                     "game_id": 44,
-                    "target_word": "まきなおし",
+                    "target_word": "ねつりよう",
                     "target_word_difficulty": "low_frequency"
                 },
                 {
                     "game_id": 45,
-                    "target_word": "みきとなり",
+                    "target_word": "ほれくすり",
                     "target_word_difficulty": "low_frequency"
                 },
                 {
                     "game_id": 46,
-                    "target_word": "みちふしん",
+                    "target_word": "ゆとうよみ",
                     "target_word_difficulty": "low_frequency"
                 },
                 {
                     "game_id": 47,
-                    "target_word": "みんゆうち",
+                    "target_word": "よりこのみ",
                     "target_word_difficulty": "low_frequency"
                 },
                 {
                     "game_id": 48,
-                    "target_word": "むせいらん",
+                    "target_word": "よりところ",
                     "target_word_difficulty": "low_frequency"
                 },
                 {
                     "game_id": 49,
-                    "target_word": "むらおこし",
+                    "target_word": "りんてんき",
                     "target_word_difficulty": "low_frequency"
                 },
                 {
                     "game_id": 50,
-                    "target_word": "わたりもの",
+                    "target_word": "わかんむり",
                     "target_word_difficulty": "low_frequency"
                 }
             ],
