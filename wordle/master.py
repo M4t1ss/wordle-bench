@@ -19,17 +19,17 @@ logger = logging.getLogger(__name__)
 
 
 class UnknownFiveLetterWordError(RuleViolationError):
-    """Raised when the word is 5-letters but not part of the game's vocabulary"""
+    """Raised when the guess is a valid length but not in the word list."""
     pass
 
 
 class WordLengthError(RuleViolationError):
-    """Raised when the word is 5-letters but not part of the game's vocabulary"""
+    """Raised when the guess does not have the expected number of characters."""
     pass
 
 
 class WordFormatError(RuleViolationError):
-    """Raised when the word is 5-letters but not part of the game's vocabulary"""
+    """Raised when the guess contains non-letter characters or spaces."""
     pass
 
 
@@ -101,50 +101,61 @@ class WordGuesser(Player):
 
 
 def parse_response(player: Player, response: str, words: Dict) -> Tuple[str, str]:
-    """Parse guesser response and extract guess and explanation"""
+    """Parse guesser response and extract guess and explanation.
 
-    response = response.lower().replace("<|im_end|>", "")
+    Expected format (case-insensitive keywords):
+        <EXPLANATION_KEYWORD> <reasoning text>
+        <GUESS_KEYWORD> <guess word>
+    """
+    # Strip common noise injected by LLMs and XML frameworks
+    response = response.replace("</assistant>", "")
 
-    if not response or not response.startswith(words["explanation_lang"]):
-        # raise ParseError(f"The response should always start with the keyword '{words['explanation_lang']}'",
+    if not response.strip():
+        raise ParseError(
+            f"{words['response_start_with_1']} '{words['explanation_lang']}'",
+            key="INVALID_START_WORD",
+        )
 
-        # Let's try to see if there is really no way to do this right...
+    explanation_kw = words["explanation_lang"]
+    guess_kw = words["guess_lang"]
 
-        if "assistantfinal" in response:
-            resp_parts = response.split("assistantfinal")
-            response = resp_parts[1]
-        if words["explanation_lang"] in response:
-            resp_parts = response.split(words["explanation_lang"])
-            response = words["explanation_lang"] + resp_parts[1]
-        else:
-            raise ParseError(f"{words['response_start_with_1']} '{words['explanation_lang']}'",
-                         key="INVALID_START_WORD")
+    # Locate the explanation keyword; if absent, the response is unparseable
+    explanation_kw_lower = explanation_kw.lower()
+    if explanation_kw_lower not in response.lower():
+        raise ParseError(
+            f"{words['response_start_with_1']} '{explanation_kw}'",
+            key="INVALID_START_WORD",
+        )
 
+    # Cut everything before the explanation keyword so we work with the
+    # actual payload rather than whatever preamble the model emitted.
+    idx = response.lower().index(explanation_kw_lower)
+    response = response[idx:]
     response = response.strip()
-    # lines = response.split("\n")
-    # if len(lines) > 2:
-    #     raise ParseError(f"The response should contain only the '{words['guess_lang']}' and "
-    #                      f"'{words['explanation_lang']}' keywords and associated information.",
-    #                      key="UNKNOWN_TAGS")
 
-    # Extract explanation and guess
-    explanation_pattern = re.compile(rf"{words['explanation_lang']}([^\n]*)", re.IGNORECASE)
-
-    content_prefix = words['guess_lang']
-    content_pattern = re.compile(rf"{content_prefix}([^\n]*)", re.IGNORECASE)
-
+    # Extract explanation (everything on the first line after the keyword)
+    explanation_pattern = re.compile(rf"{re.escape(explanation_kw)}([^\n]*)", re.IGNORECASE)
     explanation_match = explanation_pattern.search(response)
-    content_match = content_pattern.findall(response)
 
-    if len(content_match) != 1:
-        raise ParseError(f"{words['response_contain_1']} '{content_prefix}' {words['response_contain_2']}",
-                         key="MORE_THAN_ONE_GUESS")
+    # Extract guess — must appear exactly once
+    content_pattern = re.compile(rf"{re.escape(guess_kw)}([^\n]*)", re.IGNORECASE)
+    content_matches = content_pattern.findall(response)
 
-    content = content_match[0].strip().lower()
+    if len(content_matches) == 0:
+        raise ParseError(
+            f"{words['response_contain_1']} '{guess_kw}' {words['response_contain_2']}",
+            key="MISSING_GUESS",
+        )
+    if len(content_matches) > 1:
+        raise ParseError(
+            f"{words['response_contain_1']} '{guess_kw}' {words['response_contain_2']}",
+            key="MORE_THAN_ONE_GUESS",
+        )
+
+    content = content_matches[0].strip().lower()
     explanation = explanation_match.group(1).strip() if explanation_match else ""
 
     return content, explanation
-
 
 def validate_guess(guess: str, words: Dict):
     """Validate guess format and content"""
@@ -243,38 +254,30 @@ class Wordle(DialogueGameMaster):
             return False
 
     def _should_pass_turn(self):
-        if not self.state.valid_response:
-            if isinstance(self.state.error, UnknownFiveLetterWordError):
-                # perform re-prompting up to N times
-                self.state.reprompt_attempts += 1
-                if self.state.reprompt_attempts > self.state.max_retry_per_error["NOT_VALID_WORD_FOR_GAME"]:
-                    self.log_to_self("invalid format", self.state.words["game_abort"])
-                    self.state.aborted = True
-                else:  # adjust re-prompt text
-                    self.set_context_for(self.guesser, self.formatter.to_gm_reprompt_for_guesser(self.state.error))
+        if self.state.valid_response:
+            return True
 
-            elif isinstance(self.state.error, WordLengthError):
-                # perform re-prompting up to N times
-                self.state.reprompt_attempts += 1
-                if self.state.reprompt_attempts > self.state.max_retry_per_error["INVALID_WORD_LENGTH"]:
-                    self.log_to_self("invalid format", self.state.words["game_abort"])
-                    self.state.aborted = True
-                else:  # adjust re-prompt text
-                    self.set_context_for(self.guesser, self.formatter.to_gm_reprompt_for_guesser(self.state.error))
+        error = self.state.error
+        # Map error types to their retry limit keys
+        error_key = {
+            UnknownFiveLetterWordError: "NOT_VALID_WORD_FOR_GAME",
+            WordLengthError: "INVALID_WORD_LENGTH",
+            WordFormatError: "INVALID_FORMAT",
+        }.get(type(error))
 
-            elif isinstance(self.state.error, WordFormatError):
-                # perform re-prompting up to N times
-                self.state.reprompt_attempts += 1
-                if self.state.reprompt_attempts > self.state.max_retry_per_error["INVALID_FORMAT"]:
-                    self.log_to_self("invalid format", self.state.words["game_abort"])
-                    self.state.aborted = True
-                else:  # adjust re-prompt text
-                    self.set_context_for(self.guesser, self.formatter.to_gm_reprompt_for_guesser(self.state.error))
-            else:
-                self.log_to_self("invalid format", self.state.words["game_abort"])
-                self.state.aborted = True
+        if error_key is None:
+            # Unrecognised error type — abort immediately
+            self.log_to_self("invalid format", self.state.words["game_abort"])
+            self.state.aborted = True
             return False
-        return True
+
+        self.state.reprompt_attempts += 1
+        if self.state.reprompt_attempts > self.state.max_retry_per_error[error_key]:
+            self.log_to_self("invalid format", self.state.words["game_abort"])
+            self.state.aborted = True
+        else:
+            self.set_context_for(self.guesser, self.formatter.to_gm_reprompt_for_guesser(error))
+        return False
 
     def _start_next_round(self) -> bool:
         return self.state.valid_response
