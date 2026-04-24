@@ -103,7 +103,7 @@ class WordGuesser(Player):
 def parse_response(player: Player, response: str, words: Dict) -> Tuple[str, str]:
     """Parse guesser response and extract guess and explanation"""
 
-    response = response.replace("<|im_end|>", "")
+    response = response.lower().replace("<|im_end|>", "")
 
     if not response or not response.startswith(words["explanation_lang"]):
         # raise ParseError(f"The response should always start with the keyword '{words['explanation_lang']}'",
