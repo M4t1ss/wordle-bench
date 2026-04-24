@@ -1,0 +1,13 @@
+[
+  {
+    "game_name": "wordle_et",
+    "description": "Wordle 5-tähelise sõna arvamise mäng.",
+    "main_game": "wordle_et",
+    "players": 1,
+    "image": "none",
+    "languages": ["et"],
+    "benchmark": ["2.0"],
+    "regression": "small",
+    "roles": ["Guesser"]
+  }
+]

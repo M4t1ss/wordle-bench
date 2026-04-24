@@ -110,14 +110,14 @@ def parse_response(player: Player, response: str, words: Dict) -> Tuple[str, str
 
         # Let's try to see if there is really no way to do this right...
 
-        if words["explanation_lang"] in response:
-            resp_parts = response.split(words["explanation_lang"])
-            response = words["explanation_lang"] + resp_parts[1]
         if "assistantfinal" in response:
             resp_parts = response.split("assistantfinal")
             response = resp_parts[1]
+        if words["explanation_lang"] in response:
+            resp_parts = response.split(words["explanation_lang"])
+            response = words["explanation_lang"] + resp_parts[1]
         else:
-            raise ParseError(f"答えは常にキーワードで始まる必要があります '{words['explanation_lang']}'",
+            raise ParseError(f"{words['response_start_with_1']} '{words['explanation_lang']}'",
                          key="INVALID_START_WORD")
 
     response = response.strip()
@@ -137,7 +137,7 @@ def parse_response(player: Player, response: str, words: Dict) -> Tuple[str, str
     content_match = content_pattern.findall(response)
 
     if len(content_match) != 1:
-        raise ParseError(f"応答には '{content_prefix}' キーワードが 1 回だけ含まれている必要があります。",
+        raise ParseError(f"{words['response_contain_1']} '{content_prefix}' {words['response_contain_2']}",
                          key="MORE_THAN_ONE_GUESS")
 
     content = content_match[0].strip().lower()
@@ -152,15 +152,15 @@ def validate_guess(guess: str, words: Dict):
     guess = jaconv.kata2hira(guess)
 
     if not guess.isalpha() or " " in guess:
-        raise WordFormatError("推測する単語は 1 つで、カタカナのみで構成されている必要があります。",
+        raise WordFormatError(words['response_letters'],
                                  key="INVALID_FORMAT")
 
     if len(guess) != words["max_word_length"]:
-        raise WordLengthError(f"推測の長さは{words['max_word_length']}ではありません.",
+        raise WordLengthError(f"{words['response_lenth']}{words['max_word_length']}ではありません.",
                                  key="INVALID_WORD_LENGTH")
 
     if guess not in words["official_words_list"]:
-        raise UnknownFiveLetterWordError(f"このゲームでは「推測」は有効な単語ではありません。",
+        raise UnknownFiveLetterWordError(words['response_invalid'],
                                          key="NOT_VALID_WORD_FOR_GAME")
 
 
@@ -244,7 +244,7 @@ class Wordle(DialogueGameMaster):
                 self.violated_request_counts += 1
             self.state.valid_response = False
             self.state.error = e
-            self.log_to_self("metadata", f"エラー: {e.reason}")
+            self.log_to_self("metadata", f"{self.state.words['game_error']}{e.reason}")
             return False
 
     def _should_pass_turn(self):
@@ -253,7 +253,7 @@ class Wordle(DialogueGameMaster):
                 # perform re-prompting up to N times
                 self.state.reprompt_attempts += 1
                 if self.state.reprompt_attempts > self.state.max_retry_per_error["NOT_VALID_WORD_FOR_GAME"]:
-                    self.log_to_self("invalid format", "ゲーム_結果 = 放棄")
+                    self.log_to_self("invalid format", self.state.words["game_abort"])
                     self.state.aborted = True
                 else:  # adjust re-prompt text
                     self.set_context_for(self.guesser, self.formatter.to_gm_reprompt_for_guesser(self.state.error))
@@ -262,7 +262,7 @@ class Wordle(DialogueGameMaster):
                 # perform re-prompting up to N times
                 self.state.reprompt_attempts += 1
                 if self.state.reprompt_attempts > self.state.max_retry_per_error["INVALID_WORD_LENGTH"]:
-                    self.log_to_self("invalid format", "ゲーム_結果 = 放棄")
+                    self.log_to_self("invalid format", self.state.words["game_abort"])
                     self.state.aborted = True
                 else:  # adjust re-prompt text
                     self.set_context_for(self.guesser, self.formatter.to_gm_reprompt_for_guesser(self.state.error))
@@ -271,12 +271,12 @@ class Wordle(DialogueGameMaster):
                 # perform re-prompting up to N times
                 self.state.reprompt_attempts += 1
                 if self.state.reprompt_attempts > self.state.max_retry_per_error["INVALID_FORMAT"]:
-                    self.log_to_self("invalid format", "ゲーム_結果 = 放棄")
+                    self.log_to_self("invalid format", self.state.words["game_abort"])
                     self.state.aborted = True
                 else:  # adjust re-prompt text
                     self.set_context_for(self.guesser, self.formatter.to_gm_reprompt_for_guesser(self.state.error))
             else:
-                self.log_to_self("invalid format", "ゲーム_結果 = 放棄")
+                self.log_to_self("invalid format", self.state.words["game_abort"])
                 self.state.aborted = True
             return False
         return True
@@ -292,10 +292,10 @@ class Wordle(DialogueGameMaster):
         self.guesser_explanations.append(self.state.current_explanation)
         # Check terminal conditions
         if self.state.target_word == self.state.current_guess:
-            self.log_to_self("correct guess", "ゲーム_結果 = 勝利")
+            self.log_to_self("correct guess", self.state.words["game_win"])
             self.state.success = True
         elif self.current_round + 1 >= self.state.max_rounds:  # zero-based rounds
-            self.log_to_self("max rounds played", "ゲーム_結果 = 損失")
+            self.log_to_self("max rounds played", self.state.words["game_loss"])
             self.state.failure = True
         else:  # Provide word validation feedback to guesser for next round
             content = self.formatter.to_gm_response_for_guesser(self.state.guess_feedback)

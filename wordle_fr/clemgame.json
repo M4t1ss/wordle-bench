@@ -1,0 +1,13 @@
+[
+  {
+    "game_name": "wordle_fr",
+    "description": "Jeu de devinettes de mots de 5 lettres Wordle.",
+    "main_game": "wordle_fr",
+    "players": 1,
+    "image": "none",
+    "languages": ["fr"],
+    "benchmark": ["2.0"],
+    "regression": "small",
+    "roles": ["Guesser"]
+  }
+]

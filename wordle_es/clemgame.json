@@ -1,0 +1,13 @@
+[
+  {
+    "game_name": "wordle_es",
+    "description": "Juego de adivinar palabras de 5 letras Wordle.",
+    "main_game": "wordle_es",
+    "players": 1,
+    "image": "none",
+    "languages": ["es"],
+    "benchmark": ["2.0"],
+    "regression": "small",
+    "roles": ["Guesser"]
+  }
+]

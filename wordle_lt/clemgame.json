@@ -1,0 +1,13 @@
+[
+  {
+    "game_name": "wordle_lt",
+    "description": "Wordle 5 raidžių žodžių spėjimo žaidimas.",
+    "main_game": "wordle_lt",
+    "players": 1,
+    "image": "none",
+    "languages": ["lt"],
+    "benchmark": ["2.0"],
+    "regression": "small",
+    "roles": ["Guesser"]
+  }
+]

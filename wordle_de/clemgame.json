@@ -1,0 +1,13 @@
+[
+  {
+    "game_name": "wordle_de",
+    "description": "Wordle-Ratespiel für Wörter mit 5 Buchstaben.",
+    "main_game": "wordle_de",
+    "players": 1,
+    "image": "none",
+    "languages": ["de"],
+    "benchmark": ["2.0"],
+    "regression": "small",
+    "roles": ["Guesser"]
+  }
+]

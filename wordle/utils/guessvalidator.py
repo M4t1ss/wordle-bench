@@ -5,7 +5,7 @@ class GuessValidator:
     def get_target_word(self):
         return self.target_word
 
-    def validate(self, guessed_word, target_word=""):
+    def validate(self, guessed_word, words, target_word=""):
         """
         Compare the guessed word with the target word
         Return a list of tuples with the letter and the color
@@ -20,7 +20,7 @@ class GuessValidator:
         response = ""
         # Check if the input word is the target word
         if guessed_word == target_word:
-            response = [l + "<green>" for l in guessed_word]
+            response = [l + "<" + words["response_green"] + ">" for l in guessed_word]
             response = " ".join(response)
             return response
 
@@ -43,11 +43,11 @@ class GuessValidator:
         # Prepare the response
         for i in range(len(target_word)):
             if result[i] == "🟩":
-                response += guessed_word[i] + "<green> "
+                response += guessed_word[i] + "<" + words["response_green"] + "> "
             elif result[i] == "🟨":
-                response += guessed_word[i] + "<yellow> "
+                response += guessed_word[i] + "<" + words["response_yellow"] + "> "
             else:
-                response += guessed_word[i] + "<red> "
+                response += guessed_word[i] + "<" + words["response_red"] + "> "
         return response.strip()
 
 
@@ -65,4 +65,5 @@ if __name__ == "__main__":
 
     for target_word, guessed_word in tests:
         guess = GuessValidator(target_word)
-        print(f"Target: {target_word}, Guessed: {guessed_word}, Result: {guess.validate(guessed_word)}")
+        words = {"response_red":"sarkans","response_yellow":"dzeltens","response_green":"zaļš"}
+        print(f"Mērķis: {target_word}, Minējums: {guessed_word}, Rezultāts: {guess.validate(guessed_word, words)}")
