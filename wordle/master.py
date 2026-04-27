@@ -9,6 +9,7 @@ from clemcore.backends import Model
 from clemcore.clemgame import GameSpec, GameMaster, GameBenchmark, Player, ResponseError, ParseError, RuleViolationError
 from clemcore.clemgame.legacy.scorer import GameScorer
 from clemcore.clemgame.legacy.master import DialogueGameMaster
+from clemcore.clemgame.master import GameState, Outcome
 from clemcore.clemgame.metrics import METRIC_ABORTED, METRIC_SUCCESS, METRIC_LOSE, METRIC_REQUEST_COUNT, \
     METRIC_REQUEST_COUNT_VIOLATED, METRIC_REQUEST_COUNT_PARSED, BENCH_SCORE
 
@@ -105,8 +106,7 @@ def parse_response(player: Player, response: str, words: Dict) -> Tuple[str, str
 
     response = response.lower().replace("<|im_end|>", "")
 
-    if not response or not response.startswith(words["explanation_lang"]):
-        # raise ParseError(f"The response should always start with the keyword '{words['explanation_lang']}'",
+    if not response or not response.lower().startswith(words["explanation_lang"].lower()):
 
         # Let's try to see if there is really no way to do this right...
 
@@ -121,11 +121,6 @@ def parse_response(player: Player, response: str, words: Dict) -> Tuple[str, str
                          key="INVALID_START_WORD")
 
     response = response.strip()
-    # lines = response.split("\n")
-    # if len(lines) > 2:
-    #     raise ParseError(f"The response should contain only the '{words['guess_lang']}' and "
-    #                      f"'{words['explanation_lang']}' keywords and associated information.",
-    #                      key="UNKNOWN_TAGS")
 
     # Extract explanation and guess
     explanation_pattern = re.compile(rf"{words['explanation_lang']}([^\n]*)", re.IGNORECASE)
@@ -134,7 +129,10 @@ def parse_response(player: Player, response: str, words: Dict) -> Tuple[str, str
     content_pattern = re.compile(rf"{content_prefix}([^\n]*)", re.IGNORECASE)
 
     explanation_match = explanation_pattern.search(response)
-    content_match = content_pattern.findall(response)
+    # Only search for the content keyword after the explanation match ends to avoid
+    # false matches when the explanation text itself contains the keyword (e.g. "guess:")
+    search_region = response[explanation_match.end():] if explanation_match else ""
+    content_match = content_pattern.findall(search_region)
 
     if len(content_match) != 1:
         raise ParseError(f"{words['response_contain_1']} '{content_prefix}' {words['response_contain_2']}",
@@ -160,22 +158,22 @@ def validate_guess(guess: str, words: Dict):
 
 
 @dataclass
-class WordleGameState:
+class WordleGameState(GameState):
     # Wordle
-    target_word: str
-    words: Dict[str, str]
-    max_rounds: int
-    max_retry_per_error: int
-    guesser_initial_prompt: str
-    success: bool = False
-    failure: bool = False
-    aborted: bool = False
+    target_word: str = None
+    words: Dict[str, str] = None
+    max_rounds: int = None
+    max_retry_per_error: int = None
+    guesser_initial_prompt: str = None
     valid_response: bool = False
     reprompt_attempts: int = 0
     error: Optional[ResponseError] = None
     current_guess: str = None
     current_explanation: str = None
     guess_feedback: str = None
+
+    def __post_init__(self):
+        super().__init__()  # sets self.outcome = Outcome.RUNNING
 
 
 # interaction keys to log structured data for scoring or logging
@@ -197,15 +195,58 @@ class Wordle(DialogueGameMaster):
         self.guesser_explanations: List[str] = []
         self.guesser_feedbacks: List[str] = []
 
+    def _prepare_older_version_words(self, experiment_details):
+        words_dict = {}
+        words_dict["max_word_length"] = experiment_details["common_config"]["max_word_length"]
+        words_dict["official_words_list"] = experiment_details["english_words"]
+        words_dict["clue_lang"] = "clue:"
+        words_dict["guess_lang"] = "guess:"
+        words_dict["guess_word_lang"] = "word"
+        words_dict["explanation_lang"] = "explanation:"
+        words_dict["explanataion_details_lang"] = "details"
+        words_dict["guess_feedback_lang"] = "guess_feedback:"
+        words_dict["agreement_lang"] = "agreement:"
+        words_dict["agreement_word_lang"] = "yes or no"
+        words_dict["guess_agreement_lang"] = "guess_agreement:"
+        words_dict["agreement_explanation_lang"] = "agreement_explanation:"
+        words_dict["agreement_match_keywords_lang"] = ["yes", "no"]
+        words_dict["official_recognized_words_file_url"] = "https://raw.githubusercontent.com/3b1b/videos/master/_2022/wordle/data/allowed_words.txt"
+        words_dict["word_clues_file_url"] = "https://www.kaggle.com/datasets/darinhawley/new-york-times-crossword-clues-answers-19932021?select=nytcrosswords.csv"
+        words_dict["error_prompt_text"] = {
+            "INVALID_WORD_LENGTH": "The guess should have exactly 5 letters.",
+            "INVALID_WORD": "The guess should contain only letters.",
+            "NOT_VALID_WORD_FOR_GAME": "Your guess is not a valid word for this game.",
+            "INVALID_FORMAT": "Provide your response only in this format.",
+            "OTHER_ERROR": "Guess an English five-letter word.",
+            "OTHER_DETAILS": "Do not generate any other text. Please try again.",
+            "ERROR_RESPONSE_FORMAT": "Guess does not conform to the format rules",
+            "ERROR_GAME_FORMAT": "Guess does not conform to the game rules.",
+            "RETRY": "Please try again."
+
+        }
+        return words_dict
+
     def _on_setup(self, **game_instance):
         self.state = WordleGameState(
             target_word=game_instance["target_word"].strip().lower(),
-            words=self.experiment["lang_keywords"],
-            max_rounds=self.experiment["common_config"]["n_turns"],
+            words=self.experiment.get("lang_keywords"),
+            max_rounds=self.experiment["common_config"].get("n_turns"),
             # NOT_VALID_WORD_FOR_GAME is the only entry in the dict; we only handle this case in the game for now
-            max_retry_per_error=self.experiment["common_config"]["max_retry_per_error"],
+            max_retry_per_error=self.experiment["common_config"].get("max_retry_per_error"),
             guesser_initial_prompt=self.experiment["guesser_prompt"]
-        )
+        )        
+
+        # Handle older version fallbacks
+        if not self.state.words:
+            self.state.words = self._prepare_older_version_words(self.experiment)
+        if not self.state.max_rounds:
+            self.state.max_rounds = self.experiment["common_config"]["max_attempts_per_game"]
+        if isinstance(self.state.max_retry_per_error, dict):
+            self.state.max_retry_per_error = self.state.max_retry_per_error["NOT_VALID_WORD_FOR_GAME"]
+        if isinstance(self.state.guesser_initial_prompt, list):
+            self.state.guesser_initial_prompt = self.state.guesser_initial_prompt[0]["content"]
+
+
         self.guess_validator = GuessValidator(self.state.target_word)
         self.formatter = ResponseFormatter(self.state.words)
         self._add_players()
@@ -213,9 +254,6 @@ class Wordle(DialogueGameMaster):
     def _add_players(self):
         self.guesser = WordGuesser(self.player_models[0], self.state.words, self.state.target_word)
         self.add_player(self.guesser, initial_context=self.state.guesser_initial_prompt)
-
-    def _does_game_proceed(self):
-        return not (self.state.success or self.state.failure or self.state.aborted)
 
     def _validate_player_response(self, player: Player, utterance: str) -> bool:
         self.request_counts += 1
@@ -249,7 +287,7 @@ class Wordle(DialogueGameMaster):
                 self.state.reprompt_attempts += 1
                 if self.state.reprompt_attempts > self.state.max_retry_per_error["NOT_VALID_WORD_FOR_GAME"]:
                     self.log_to_self("invalid format", self.state.words["game_abort"])
-                    self.state.aborted = True
+                    self.state.abort()
                 else:  # adjust re-prompt text
                     self.set_context_for(self.guesser, self.formatter.to_gm_reprompt_for_guesser(self.state.error))
 
@@ -258,7 +296,7 @@ class Wordle(DialogueGameMaster):
                 self.state.reprompt_attempts += 1
                 if self.state.reprompt_attempts > self.state.max_retry_per_error["INVALID_WORD_LENGTH"]:
                     self.log_to_self("invalid format", self.state.words["game_abort"])
-                    self.state.aborted = True
+                    self.state.abort()
                 else:  # adjust re-prompt text
                     self.set_context_for(self.guesser, self.formatter.to_gm_reprompt_for_guesser(self.state.error))
 
@@ -267,12 +305,12 @@ class Wordle(DialogueGameMaster):
                 self.state.reprompt_attempts += 1
                 if self.state.reprompt_attempts > self.state.max_retry_per_error["INVALID_FORMAT"]:
                     self.log_to_self("invalid format", self.state.words["game_abort"])
-                    self.state.aborted = True
+                    self.state.abort()
                 else:  # adjust re-prompt text
                     self.set_context_for(self.guesser, self.formatter.to_gm_reprompt_for_guesser(self.state.error))
             else:
                 self.log_to_self("invalid format", self.state.words["game_abort"])
-                self.state.aborted = True
+                self.state.abort()
             return False
         return True
 
@@ -288,10 +326,10 @@ class Wordle(DialogueGameMaster):
         # Check terminal conditions
         if self.state.target_word == self.state.current_guess:
             self.log_to_self("correct guess", self.state.words["game_win"])
-            self.state.success = True
+            self.state.succeed()
         elif self.current_round + 1 >= self.state.max_rounds:  # zero-based rounds
             self.log_to_self("max rounds played", self.state.words["game_loss"])
-            self.state.failure = True
+            self.state.failed()
         else:  # Provide word validation feedback to guesser for next round
             content = self.formatter.to_gm_response_for_guesser(self.state.guess_feedback)
             self.set_context_for(self.guesser, content)
@@ -304,18 +342,10 @@ class Wordle(DialogueGameMaster):
             "guess_feedback": self.state.guess_feedback
         }
 
-    def compute_response_score(self, response, context):
-        return 1 if self.state.success else 0
-
-    def compute_episode_score(self):
-        if self.state.success:
-            return 100 / self.current_round
-        return 0
-
     def _on_after_game(self):
-        self.log_key(METRIC_ABORTED, int(self.state.aborted))
-        self.log_key(METRIC_LOSE, int(self.state.failure))
-        self.log_key(METRIC_SUCCESS, int(self.state.success))
+        self.log_key(METRIC_ABORTED, int(self.state.outcome == Outcome.ABORTED))
+        self.log_key(METRIC_LOSE, int(self.state.outcome == Outcome.FAILURE))
+        self.log_key(METRIC_SUCCESS, int(self.state.outcome == Outcome.SUCCESS))
 
         self.log_key(METRIC_REQUEST_COUNT, self.request_counts)
         self.log_key(METRIC_REQUEST_COUNT_PARSED, self.parsed_request_counts)
@@ -324,6 +354,7 @@ class Wordle(DialogueGameMaster):
         self.log_key(GUESSER_GUESSES, self.guesser_guesses)
         self.log_key(GUESSER_FEEDBACKS, self.guesser_feedbacks)
         self.log_key(GUESSER_EXPLANATIONS, self.guesser_explanations)
+
 
 
 SPEED_SCORES = {
